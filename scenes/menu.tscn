@@ -1,8 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://dxdpvdb72anbu"]
+[gd_scene load_steps=10 format=3 uid="uid://dxdpvdb72anbu"]
 
-[ext_resource type="Script" path="res://scripts/menu.gd" id="1_e784o"]
+[ext_resource type="Texture2D" uid="uid://dggjp3uwyo3ej" path="res://assets/sprites/Scrollthing.png" id="2_8bpcu"]
+[ext_resource type="Texture2D" uid="uid://bo3jcgm7tjtbp" path="res://assets/sprites/ArabiaMapIndicator.png" id="2_h5ry3"]
 [ext_resource type="FontFile" uid="uid://dlk0p5n2mdgm4" path="res://assets/fonts/PixelOperator8.ttf" id="2_r50em"]
 [ext_resource type="Script" path="res://scripts/button.gd" id="3_w35ac"]
+[ext_resource type="Texture2D" uid="uid://h838c8thmkjx" path="res://assets/sprites/AfricaMapIndicator.png" id="4_ravwi"]
+
+[sub_resource type="GDScript" id="GDScript_u2m6j"]
+script/source = "extends Control
+
+func _ready() -> void:
+	pass
+	
+func _process(delta: float) -> void:
+	pass
+"
 
 [sub_resource type="Animation" id="Animation_orn0l"]
 resource_name = "Falldown"
@@ -46,11 +58,9 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -16.0
-offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_e784o")
+script = SubResource("GDScript_u2m6j")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 2
@@ -71,12 +81,54 @@ libraries = {
 }
 autoplay = "Falldown"
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 450.0
-offset_top = 275.0
-offset_right = 671.0
-offset_bottom = 459.0
+[node name="Arabia Button Group" type="Node" parent="."]
+
+[node name="Scrollthing" type="Sprite2D" parent="Arabia Button Group"]
+position = Vector2(574.5, 383.813)
+scale = Vector2(3.32813, 3.50586)
+texture = ExtResource("2_8bpcu")
+
+[node name="ArabiaMapIndicator" type="Sprite2D" parent="Arabia Button Group"]
+position = Vector2(566, 289)
+scale = Vector2(2.4375, 2.4375)
+texture = ExtResource("2_h5ry3")
+
+[node name="Arabia Button" type="Button" parent="Arabia Button Group"]
+offset_left = 486.0
+offset_top = 297.0
+offset_right = 665.0
+offset_bottom = 440.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_r50em")
-text = "Arabia"
+theme_override_font_sizes/font_size = 29
+text = "
+Arabia"
+flat = true
+icon_alignment = 1
 script = ExtResource("3_w35ac")
+
+[node name="Africa Button Group" type="Node" parent="."]
+
+[node name="Scrollthing" type="Sprite2D" parent="Africa Button Group"]
+position = Vector2(283.5, 383.813)
+scale = Vector2(3.32813, 3.50586)
+texture = ExtResource("2_8bpcu")
+
+[node name="ArabiaMapIndicator" type="Sprite2D" parent="Africa Button Group"]
+position = Vector2(275, 289)
+scale = Vector2(2.4375, 2.4375)
+texture = ExtResource("4_ravwi")
+
+[node name="Africa Button" type="Button" parent="Africa Button Group"]
+offset_left = 195.0
+offset_top = 297.0
+offset_right = 374.0
+offset_bottom = 440.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_r50em")
+theme_override_font_sizes/font_size = 29
+text = "
+Africa"
+flat = true
+icon_alignment = 1
+metadata/_edit_use_anchors_ = true
