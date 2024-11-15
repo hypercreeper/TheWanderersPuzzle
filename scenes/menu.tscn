@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://dxdpvdb72anbu"]
+[gd_scene load_steps=12 format=3 uid="uid://dxdpvdb72anbu"]
 
 [ext_resource type="Texture2D" uid="uid://dggjp3uwyo3ej" path="res://assets/sprites/Scrollthing.png" id="2_8bpcu"]
 [ext_resource type="Texture2D" uid="uid://bo3jcgm7tjtbp" path="res://assets/sprites/ArabiaMapIndicator.png" id="2_h5ry3"]
 [ext_resource type="FontFile" uid="uid://dlk0p5n2mdgm4" path="res://assets/fonts/PixelOperator8.ttf" id="2_r50em"]
 [ext_resource type="Script" path="res://scripts/button.gd" id="3_w35ac"]
 [ext_resource type="Texture2D" uid="uid://h838c8thmkjx" path="res://assets/sprites/AfricaMapIndicator.png" id="4_ravwi"]
+[ext_resource type="Texture2D" uid="uid://mup6m2w5jy2b" path="res://assets/sprites/Map.png" id="6_47an7"]
+[ext_resource type="Texture2D" uid="uid://7jivgws2m8b1" path="res://assets/sprites/IndiaMapIndicator.png" id="6_p62r6"]
 
 [sub_resource type="GDScript" id="GDScript_u2m6j"]
 script/source = "extends Control
@@ -55,9 +57,12 @@ _data = {
 
 [node name="Menu" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.071
+anchor_right = 0.96
+anchor_bottom = 1.577
+offset_left = -81.792
+offset_right = 0.0799561
+offset_bottom = 0.104004
 grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_u2m6j")
@@ -84,19 +89,19 @@ autoplay = "Falldown"
 [node name="Arabia Button Group" type="Node" parent="."]
 
 [node name="Scrollthing" type="Sprite2D" parent="Arabia Button Group"]
-position = Vector2(574.5, 383.813)
+position = Vector2(585.5, 383.813)
 scale = Vector2(3.32813, 3.50586)
 texture = ExtResource("2_8bpcu")
 
 [node name="ArabiaMapIndicator" type="Sprite2D" parent="Arabia Button Group"]
-position = Vector2(566, 289)
+position = Vector2(577, 289)
 scale = Vector2(2.4375, 2.4375)
 texture = ExtResource("2_h5ry3")
 
 [node name="Arabia Button" type="Button" parent="Arabia Button Group"]
-offset_left = 486.0
+offset_left = 497.0
 offset_top = 297.0
-offset_right = 665.0
+offset_right = 676.0
 offset_bottom = 440.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_r50em")
@@ -106,6 +111,7 @@ Arabia"
 flat = true
 icon_alignment = 1
 script = ExtResource("3_w35ac")
+metadata/_edit_use_anchors_ = true
 
 [node name="Africa Button Group" type="Node" parent="."]
 
@@ -114,7 +120,7 @@ position = Vector2(283.5, 383.813)
 scale = Vector2(3.32813, 3.50586)
 texture = ExtResource("2_8bpcu")
 
-[node name="ArabiaMapIndicator" type="Sprite2D" parent="Africa Button Group"]
+[node name="AfricaMapIndicator" type="Sprite2D" parent="Africa Button Group"]
 position = Vector2(275, 289)
 scale = Vector2(2.4375, 2.4375)
 texture = ExtResource("4_ravwi")
@@ -132,3 +138,36 @@ Africa"
 flat = true
 icon_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="India Button Group" type="Node" parent="."]
+
+[node name="Scrollthing" type="Sprite2D" parent="India Button Group"]
+position = Vector2(866.5, 383.813)
+scale = Vector2(3.32813, 3.50586)
+texture = ExtResource("2_8bpcu")
+
+[node name="IndiaMapIndicator" type="Sprite2D" parent="India Button Group"]
+position = Vector2(866, 309)
+scale = Vector2(2.4375, 2.4375)
+texture = ExtResource("6_p62r6")
+
+[node name="India Button" type="Button" parent="India Button Group"]
+offset_left = 778.0
+offset_top = 297.0
+offset_right = 957.0
+offset_bottom = 440.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_r50em")
+theme_override_font_sizes/font_size = 29
+text = "
+India"
+flat = true
+icon_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Map" type="Sprite2D" parent="."]
+position = Vector2(516, 512)
+texture = ExtResource("6_47an7")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(581, 322)
