@@ -69,3 +69,12 @@ libraries = {
 "": SubResource("AnimationLibrary_ijpc6")
 }
 autoplay = "Falldown"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 275.0
+offset_right = 671.0
+offset_bottom = 459.0
+theme_override_fonts/font = ExtResource("2_r50em")
+text = "Arabia"
