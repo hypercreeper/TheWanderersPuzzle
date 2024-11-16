@@ -18,3 +18,5 @@ func play_african():
 	$player.stop()
 	$AfricanMusic.play()
 	
+func play_pot_break():
+	$PotBreak.play()

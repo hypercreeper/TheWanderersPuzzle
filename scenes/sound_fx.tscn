@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://clmsyl07mlq2e"]
+[gd_scene load_steps=9 format=3 uid="uid://clmsyl07mlq2e"]
 
 [ext_resource type="Script" path="res://scripts/sound_fx.gd" id="1_mc835"]
 [ext_resource type="AudioStream" uid="uid://dftrdqrjdcedl" path="res://assets/music/alexander-nakarada-the-great-battle(chosic.com).mp3" id="2_5hlhb"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://bifoti51dahch" path="res://assets/music/arab-and-muslim-190765.mp3" id="5_fxc7b"]
 [ext_resource type="AudioStream" uid="uid://5t12f636447r" path="res://assets/music/indian-temple-187922.mp3" id="5_iyiay"]
 [ext_resource type="AudioStream" uid="uid://wvub0b6p088d" path="res://assets/music/jungle-story-168459.mp3" id="7_xav76"]
+[ext_resource type="AudioStream" uid="uid://d1c1dfeldpn3d" path="res://assets/sounds/pot_break.wav" id="8_tdqlx"]
 
 [node name="SoundFX" type="Node"]
 script = ExtResource("1_mc835")
@@ -31,3 +32,6 @@ stream = ExtResource("5_iyiay")
 
 [node name="AfricanMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_xav76")
+
+[node name="PotBreak" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_tdqlx")
