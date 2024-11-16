@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2gci73geost3"
-path="res://.godot/imported/arabiaparallaxmiddlebackl.png-9227af19825357eb56a16e76e884c8f7.ctex"
+uid="uid://bfr3a1a4i5ah5"
+path="res://.godot/imported/botom.png-2e4949d86f7738b222fb2da37e9a9ffe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backdrops/parallax Arabia/arabiaparallaxmiddlebackl.png"
-dest_files=["res://.godot/imported/arabiaparallaxmiddlebackl.png-9227af19825357eb56a16e76e884c8f7.ctex"]
+source_file="res://assets/backdrops/parallax Arabia/botom.png"
+dest_files=["res://.godot/imported/botom.png-2e4949d86f7738b222fb2da37e9a9ffe.ctex"]
 
 [params]
 

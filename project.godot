@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 GameManagerss="*res://scripts/game_manager.gd"
 SoundFx="*res://scenes/sound_fx.tscn"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [input]
 
 jump={

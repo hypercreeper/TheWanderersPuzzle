@@ -292,10 +292,6 @@ position = Vector2(-312, -9)
 wait_time = 5.0
 autostart = true
 
-[node name="Game Manager" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("8_a74yd")
-
 [node name="Enemy" parent="." instance=ExtResource("4_ssokk")]
 position = Vector2(395, -80)
 
@@ -342,5 +338,9 @@ stretch_mode = 3
 layout_mode = 2
 texture = ExtResource("12_3sb2g")
 stretch_mode = 3
+
+[node name="Game Manager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("8_a74yd")
 
 [connection signal="body_entered" from="Pot/Pot" to="Pot/Pot" method="_on_body_entered"]

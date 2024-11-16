@@ -3,7 +3,6 @@ extends Node2D
 #@onready var water_label: Label = $Player/Camera2D/WaterLabel
 @onready var timer: Timer = $Timer
 
-
 func _ready() -> void:
 	GameManagerss.last_scene="arabia"
 	GameManagerss.water = 15
