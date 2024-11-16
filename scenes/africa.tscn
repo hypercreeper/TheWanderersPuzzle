@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://f7lgj8fx3wbq"]
+[gd_scene load_steps=24 format=3 uid="uid://f7lgj8fx3wbq"]
 
 [ext_resource type="Script" path="res://scripts/africa.gd" id="1_obonr"]
 [ext_resource type="PackedScene" uid="uid://r8m8x8myq4cf" path="res://scenes/killzone.tscn" id="1_yobu8"]
@@ -12,8 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://ptb23jubexxh" path="res://assets/sprites/coinicon.png" id="9_e27jd"]
 [ext_resource type="FontFile" uid="uid://ctui8lbqt0mdi" path="res://font.ttf" id="9_f6bur"]
 [ext_resource type="Texture2D" uid="uid://m5rjric0phad" path="res://assets/sprites/droplet.png" id="10_8dg52"]
-[ext_resource type="PackedScene" uid="uid://dayjr02m01dcl" path="res://scenes/pot.tscn" id="10_r0i2g"]
+[ext_resource type="PackedScene" uid="uid://chtm5rrt4ee8i" path="res://scenes/pot.tscn" id="10_r0i2g"]
 [ext_resource type="Script" path="res://scenes/water_regen_area.gd" id="13_johc0"]
+[ext_resource type="Texture2D" uid="uid://c8242ptcdjfqa" path="res://assets/sprites/sheikh a.png" id="15_srpjx"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pv50g"]
 distance = -111.0
@@ -301,7 +302,7 @@ position = Vector2(200, -41)
 position = Vector2(-244, -7)
 
 [node name="Player" parent="." instance=ExtResource("6_mgqva")]
-position = Vector2(-135, 14)
+position = Vector2(-231, -3)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
@@ -382,6 +383,56 @@ script = ExtResource("13_johc0")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 position = Vector2(-11, -2)
 polygon = PackedVector2Array(-35, -11, -35, 16, 29, 16, 29, 0, 45, 0, 45, -11)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -169.0
+offset_top = -23.0
+offset_right = -13.0
+theme_override_fonts/font = ExtResource("9_f6bur")
+theme_override_font_sizes/font_size = 16
+text = "Ibn Batuta..."
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -73.0
+offset_top = -72.0
+offset_right = 225.0
+offset_bottom = -49.0
+theme_override_fonts/font = ExtResource("9_f6bur")
+theme_override_font_sizes/font_size = 16
+text = "Find Sheikh Burhanuddin..."
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 308.0
+offset_top = -105.0
+offset_right = 636.0
+offset_bottom = -82.0
+theme_override_fonts/font = ExtResource("9_f6bur")
+theme_override_font_sizes/font_size = 16
+text = "Stay Hydrated..."
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 598.0
+offset_top = -113.0
+offset_right = 926.0
+offset_bottom = -90.0
+theme_override_fonts/font = ExtResource("9_f6bur")
+theme_override_font_sizes/font_size = 16
+text = "Almost There..."
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 1353.0
+offset_top = -49.0
+offset_right = 1753.0
+offset_bottom = -26.0
+theme_override_fonts/font = ExtResource("9_f6bur")
+theme_override_font_sizes/font_size = 16
+text = "Almost There... Stay Hydrated..."
+
+[node name="SheikhA" type="Sprite2D" parent="."]
+position = Vector2(2592, -102)
+scale = Vector2(0.0752253, 0.0752253)
+texture = ExtResource("15_srpjx")
+flip_h = true
 
 [connection signal="body_entered" from="Pot/Pot" to="Pot/Pot" method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

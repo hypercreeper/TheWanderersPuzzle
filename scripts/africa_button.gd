@@ -14,7 +14,6 @@ func button_downs() -> void:
 		africa_button.disabled=true
 		click_sound.play()
 		await click_sound.finished
-		SoundFx.play_african()
 		tree.change_scene_to_file("res://scenes/africa.tscn")
 	else:
 		pass

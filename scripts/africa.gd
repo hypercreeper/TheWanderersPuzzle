@@ -6,6 +6,7 @@ extends Node2D
 static var regenerating_water = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	SoundFx.play_african()
 	GameManagerss.last_scene="africa"
 	GameManagerss.water = 15
 	$Player/Camera2D/HBoxContainer/Label.text = str(GameManagerss.score)
