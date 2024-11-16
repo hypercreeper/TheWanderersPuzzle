@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bkyki2s8wv4b2"]
+[gd_scene load_steps=22 format=3 uid="uid://bkyki2s8wv4b2"]
 
 [ext_resource type="PackedScene" uid="uid://r8m8x8myq4cf" path="res://scenes/killzone.tscn" id="1_3wrq3"]
 [ext_resource type="Script" path="res://scripts/india.gd" id="1_17ygw"]
@@ -14,6 +14,8 @@
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="8_d78wt"]
 [ext_resource type="Texture2D" uid="uid://ptb23jubexxh" path="res://assets/sprites/coinicon.png" id="8_haicm"]
 [ext_resource type="PackedScene" uid="uid://chtm5rrt4ee8i" path="res://scenes/pot.tscn" id="14_hi6tv"]
+[ext_resource type="Texture2D" uid="uid://m5rjric0phad" path="res://assets/sprites/droplet.png" id="13_mi8sy"]
+[ext_resource type="PackedScene" uid="uid://dayjr02m01dcl" path="res://scenes/pot.tscn" id="14_hi6tv"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pv50g"]
 distance = -111.0
@@ -362,7 +364,7 @@ stretch_mode = 3
 
 [node name="TextureRect2" type="TextureRect" parent="Player/Camera2D/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("8_haicm")
+texture = ExtResource("13_mi8sy")
 stretch_mode = 3
 
 [node name="Game Manager" type="Node" parent="."]

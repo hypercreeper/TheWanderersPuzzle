@@ -11,7 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://ptb23jubexxh" path="res://assets/sprites/coinicon.png" id="7_08cdo"]
 [ext_resource type="FontFile" uid="uid://dlk0p5n2mdgm4" path="res://assets/fonts/PixelOperator8.ttf" id="7_wiumm"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="8_a74yd"]
-[ext_resource type="PackedScene" uid="uid://chtm5rrt4ee8i" path="res://scenes/pot.tscn" id="11_mtygl"]
+[ext_resource type="Texture2D" uid="uid://m5rjric0phad" path="res://assets/sprites/droplet.png" id="10_hd01n"]
+[ext_resource type="PackedScene" uid="uid://dayjr02m01dcl" path="res://scenes/pot.tscn" id="11_mtygl"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pv50g"]
 distance = -111.0
@@ -325,6 +326,15 @@ alignment = 1
 layout_mode = 2
 texture = ExtResource("7_08cdo")
 stretch_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="Player/Camera2D/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("10_hd01n")
+stretch_mode = 3
+
+[node name="Game Manager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("8_a74yd")
 
 [node name="Enemy" parent="." instance=ExtResource("4_ssokk")]
 position = Vector2(395, -80)
