@@ -21,4 +21,5 @@ func remove_water():
 		print("No water left!")
 
 func update_water_label():
-	print(GameManagerss.water)
+	print("Water"+str(GameManagerss.water))
+	
