@@ -367,3 +367,7 @@ stretch_mode = 3
 [node name="Game Manager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("8_d78wt")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true

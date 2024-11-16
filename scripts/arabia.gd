@@ -14,15 +14,9 @@ func _process(delta: float) -> void:
 	pass
 	
 func remove_water():
-	if GameManagerss.water > 0:
+	if GameManagerss.water > 1:
 		GameManagerss.water -= 1
 		game_manager.update_water_label()
 	else:
-		print("No water left!")
-<<<<<<< Updated upstream
-
-func update_water_label():
-	print("Water"+str(GameManagerss.water))
-	
-=======
->>>>>>> Stashed changes
+		$Player.get_node("CollisionShape2D").queue_free()
+		get_tree().reload_current_scene()

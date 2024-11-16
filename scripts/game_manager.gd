@@ -12,3 +12,6 @@ func add_point(points):
 
 func update_water_label():
 	label.text = "Score: " + str(score) + "\nWater: " + str(water)
+
+func kill_player():
+	pass

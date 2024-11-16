@@ -216,7 +216,7 @@ _data = {
 "RESET": SubResource("Animation_ded0n")
 }
 
-[node name="Game" type="Node2D"]
+[node name="Game3" type="Node2D"]
 script = ExtResource("1_1cctq")
 
 [node name="Killzone" parent="." instance=ExtResource("1_m67a3")]

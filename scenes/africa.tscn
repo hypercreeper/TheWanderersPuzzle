@@ -327,10 +327,6 @@ layout_mode = 2
 texture = ExtResource("9_e27jd")
 stretch_mode = 3
 
-[node name="Game Manager" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("8_o3f3k")
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-347, -14)
 
@@ -347,11 +343,19 @@ position = Vector2(3, -257)
 [node name="Pot" parent="Pot" instance=ExtResource("10_r0i2g")]
 position = Vector2(8, -8)
 
+[node name="Game Manager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("8_o3f3k")
+
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(-347, -14)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(3033, -58)
 shape = SubResource("RectangleShape2D_u0ng8")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 6.0
+autostart = true
 
 [connection signal="body_entered" from="Pot/Pot" to="Pot/Pot" method="_on_body_entered"]
