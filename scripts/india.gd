@@ -1,7 +1,7 @@
 extends Node2D
 @onready var timer: Timer = $Timer
 @onready var game_manager: Node = %"Game Manager"
-
+static var regenerating_water = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameManagerss.last_scene="india"

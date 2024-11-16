@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://f7lgj8fx3wbq"]
+[gd_scene load_steps=23 format=3 uid="uid://f7lgj8fx3wbq"]
 
 [ext_resource type="Script" path="res://scripts/africa.gd" id="1_obonr"]
 [ext_resource type="PackedScene" uid="uid://r8m8x8myq4cf" path="res://scenes/killzone.tscn" id="1_yobu8"]
@@ -10,8 +10,9 @@
 [ext_resource type="FontFile" uid="uid://dlk0p5n2mdgm4" path="res://assets/fonts/PixelOperator8.ttf" id="7_0kru8"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="8_o3f3k"]
 [ext_resource type="Texture2D" uid="uid://ptb23jubexxh" path="res://assets/sprites/coinicon.png" id="9_e27jd"]
+[ext_resource type="FontFile" uid="uid://ctui8lbqt0mdi" path="res://font.ttf" id="9_f6bur"]
 [ext_resource type="Texture2D" uid="uid://m5rjric0phad" path="res://assets/sprites/droplet.png" id="10_8dg52"]
-[ext_resource type="PackedScene" uid="uid://chtm5rrt4ee8i" path="res://scenes/pot.tscn" id="10_r0i2g"]
+[ext_resource type="PackedScene" uid="uid://dayjr02m01dcl" path="res://scenes/pot.tscn" id="10_r0i2g"]
 [ext_resource type="Script" path="res://scenes/water_regen_area.gd" id="13_johc0"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pv50g"]
@@ -234,6 +235,11 @@ _data = {
 "RESET": SubResource("Animation_ded0n")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_54v6e"]
+font = ExtResource("9_f6bur")
+font_size = 8
+font_color = Color(0.212839, 0.439923, 1, 1)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0ng8"]
 size = Vector2(20, 394)
 
@@ -276,7 +282,7 @@ position = Vector2(-261, 33)
 [node name="Coins" type="Node" parent="."]
 
 [node name="coin" parent="Coins" instance=ExtResource("5_d13rt")]
-position = Vector2(-64, 39)
+position = Vector2(248, -41)
 
 [node name="coin2" parent="Coins" instance=ExtResource("5_d13rt")]
 position = Vector2(-200, 6)
@@ -302,6 +308,15 @@ zoom = Vector2(4, 4)
 limit_bottom = 120
 limit_smoothed = true
 position_smoothing_enabled = true
+
+[node name="ReplenishingLabel" type="Label" parent="Player/Camera2D"]
+offset_left = -40.0
+offset_top = -27.0
+offset_right = 53.0
+offset_bottom = -18.0
+theme_override_fonts/font = ExtResource("7_0kru8")
+text = "Replenishing..."
+label_settings = SubResource("LabelSettings_54v6e")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Player/Camera2D"]
 offset_left = -136.0
@@ -360,12 +375,14 @@ shape = SubResource("RectangleShape2D_u0ng8")
 wait_time = 6.0
 autostart = true
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
-position = Vector2(-61, 31)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3"]
-position = Vector2(0, 1)
-polygon = PackedVector2Array(-35, -11, -35, 16, 29, 16, 29, 0, 45, 0, 45, -11)
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-51, 33)
 script = ExtResource("13_johc0")
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(-11, -2)
+polygon = PackedVector2Array(-35, -11, -35, 16, 29, 16, 29, 0, 45, 0, 45, -11)
+
 [connection signal="body_entered" from="Pot/Pot" to="Pot/Pot" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
