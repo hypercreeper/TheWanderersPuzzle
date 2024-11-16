@@ -1,10 +1,9 @@
 extends Control
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if GameManagerss.last_scene == "MainMenu":
+	print(GameManagerss.last_scene)
+	if GameManagerss.last_scene == "africa":
 		SoundFx.background_music()
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	if GameManagerss.last_scene == "arabia":
+		SoundFx.background_music()
+	if GameManagerss.last_scene == "india":
+		SoundFx.background_music()

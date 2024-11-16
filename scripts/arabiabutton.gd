@@ -14,6 +14,8 @@ func button_downs() -> void:
 		arabia_button.disabled=true
 		click_sound.play()
 		await click_sound.finished
+		SoundFx.play_arabian()
+
 		tree.change_scene_to_file("res://scenes/arabia.tscn")
 	else:
 		pass

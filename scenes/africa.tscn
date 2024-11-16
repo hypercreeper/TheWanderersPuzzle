@@ -1,5 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://f7lgj8fx3wbq"]
+[gd_scene load_steps=19 format=3 uid="uid://f7lgj8fx3wbq"]
 
+[ext_resource type="Script" path="res://scripts/africa.gd" id="1_obonr"]
 [ext_resource type="PackedScene" uid="uid://r8m8x8myq4cf" path="res://scenes/killzone.tscn" id="1_yobu8"]
 [ext_resource type="Texture2D" uid="uid://dnei68v4e2bu2" path="res://assets/sprites/world_tileset.png" id="2_mkmdl"]
 [ext_resource type="PackedScene" uid="uid://t68og48b4rdo" path="res://scenes/platform.tscn" id="3_xhxib"]
@@ -232,7 +233,8 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0ng8"]
 size = Vector2(20, 394)
 
-[node name="Game" type="Node2D"]
+[node name="Game2" type="Node2D"]
+script = ExtResource("1_obonr")
 
 [node name="Killzone" parent="." instance=ExtResource("1_yobu8")]
 

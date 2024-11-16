@@ -3,9 +3,7 @@ extends Button
 @onready var africa_button: Button = $"."
 
 func _ready() -> void:
-	self.button_down.connect(self.button_downs.bind())
-	
-	
+	self.button_down.connect(self.button_downs.bind())	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
@@ -16,6 +14,7 @@ func button_downs() -> void:
 		africa_button.disabled=true
 		click_sound.play()
 		await click_sound.finished
+		SoundFx.play_african()
 		tree.change_scene_to_file("res://scenes/africa.tscn")
 	else:
 		pass

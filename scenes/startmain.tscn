@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c13r6gm7njvc4"]
+[gd_scene load_steps=16 format=3 uid="uid://c13r6gm7njvc4"]
 
 [ext_resource type="Script" path="res://scripts/startmain.gd" id="1_n6vhh"]
 [ext_resource type="Texture2D" uid="uid://mup6m2w5jy2b" path="res://assets/sprites/Map.png" id="1_qx8j2"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://scripts/africa_button.gd" id="7_rpkon"]
 [ext_resource type="Script" path="res://scripts/india_button.gd" id="9_m2mjl"]
 [ext_resource type="AudioStream" uid="uid://bvxc6m6aejbfu" path="res://assets/music/old-radio-button-click-97549.mp3" id="10_w7y1a"]
+[ext_resource type="Script" path="res://scripts/optionsbackbutton.gd" id="12_tkthm"]
 
 [sub_resource type="Animation" id="Animation_kb8hs"]
 length = 0.001
@@ -173,7 +174,7 @@ theme_override_constants/outline_size = 24
 theme_override_constants/shadow_outline_size = 10
 theme_override_fonts/font = ExtResource("4_krfww")
 theme_override_font_sizes/font_size = 64
-text = "The Wanderer's Puzzle"
+text = "Location Select"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -185,3 +186,14 @@ libraries = {
 [node name="ClickSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_w7y1a")
 volume_db = 8.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+offset_left = 32.0
+offset_top = 23.0
+offset_right = 88.0
+offset_bottom = 77.0
+text = "<-"
+script = ExtResource("12_tkthm")
+
+[connection signal="button_down" from="Button" to="Button" method="_on_button_down"]

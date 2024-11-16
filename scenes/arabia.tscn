@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://h2fm780o0lm4"]
+[gd_scene load_steps=17 format=3 uid="uid://h2fm780o0lm4"]
 
+[ext_resource type="Script" path="res://scripts/arabia.gd" id="1_1cctq"]
 [ext_resource type="PackedScene" uid="uid://r8m8x8myq4cf" path="res://scenes/killzone.tscn" id="1_m67a3"]
 [ext_resource type="Texture2D" uid="uid://dnei68v4e2bu2" path="res://assets/sprites/world_tileset.png" id="2_d4jso"]
 [ext_resource type="PackedScene" uid="uid://t68og48b4rdo" path="res://scenes/platform.tscn" id="3_ppbth"]
@@ -216,6 +217,7 @@ _data = {
 }
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_1cctq")
 
 [node name="Killzone" parent="." instance=ExtResource("1_m67a3")]
 
