@@ -10,7 +10,7 @@
 [ext_resource type="FontFile" uid="uid://dlk0p5n2mdgm4" path="res://assets/fonts/PixelOperator8.ttf" id="7_0kru8"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="8_o3f3k"]
 [ext_resource type="Texture2D" uid="uid://ptb23jubexxh" path="res://assets/sprites/coinicon.png" id="9_e27jd"]
-[ext_resource type="PackedScene" uid="uid://dayjr02m01dcl" path="res://scenes/pot.tscn" id="10_r0i2g"]
+[ext_resource type="PackedScene" path="res://scenes/pot.tscn" id="10_r0i2g"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pv50g"]
 distance = -111.0
@@ -317,10 +317,6 @@ layout_mode = 2
 texture = ExtResource("9_e27jd")
 stretch_mode = 3
 
-[node name="Game Manager" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("8_o3f3k")
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-347, -14)
 
@@ -337,6 +333,7 @@ position = Vector2(3, -257)
 [node name="Pot" parent="Pot" instance=ExtResource("10_r0i2g")]
 position = Vector2(8, -8)
 
+<<<<<<< Updated upstream
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(-347, -14)
 
@@ -345,3 +342,10 @@ position = Vector2(3033, -58)
 shape = SubResource("RectangleShape2D_u0ng8")
 
 [connection signal="body_entered" from="Pot/Pot" to="Pot/Pot" method="_on_body_entered"]
+=======
+[node name="Game Manager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("8_o3f3k")
+
+[connection signal="body_entered" from="Node/Pot" to="Node/Pot" method="_on_body_entered"]
+>>>>>>> Stashed changes
