@@ -282,11 +282,6 @@ limit_bottom = 120
 limit_smoothed = true
 position_smoothing_enabled = true
 
-[node name="WaterLabel" type="Label" parent="Player/Camera2D"]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "water"
-
 [node name="HBoxContainer" type="HBoxContainer" parent="Player/Camera2D"]
 offset_left = -136.0
 offset_top = -165.0
@@ -296,9 +291,19 @@ offset_bottom = 40.0
 [node name="Label" type="Label" parent="Player/Camera2D/HBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_wiumm")
-text = "X"
+text = "Score: 23
+Water: 21"
 
-[node name="TextureRect" type="TextureRect" parent="Player/Camera2D/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Player/Camera2D/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Player/Camera2D/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("7_08cdo")
+stretch_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="Player/Camera2D/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 texture = ExtResource("7_08cdo")
 stretch_mode = 3

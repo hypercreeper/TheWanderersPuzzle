@@ -8,4 +8,7 @@ static var water:int =15
 
 func add_point(points):
 	score +=points
-	label.text = str(score)
+	label.text = "Score: " + str(score) + "\nWater: " + str(water)
+
+func update_water_label():
+	label.text = "Score: " + str(score) + "\nWater: " + str(water)
