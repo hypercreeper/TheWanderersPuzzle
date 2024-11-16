@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bkyki2s8wv4b2"]
+[gd_scene load_steps=20 format=3 uid="uid://bkyki2s8wv4b2"]
 
 [ext_resource type="PackedScene" uid="uid://r8m8x8myq4cf" path="res://scenes/killzone.tscn" id="1_3wrq3"]
 [ext_resource type="Script" path="res://scripts/india.gd" id="1_17ygw"]
@@ -11,7 +11,8 @@
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="8_d78wt"]
 [ext_resource type="Texture2D" uid="uid://ptb23jubexxh" path="res://assets/sprites/coinicon.png" id="8_haicm"]
 [ext_resource type="Texture2D" uid="uid://m5rjric0phad" path="res://assets/sprites/droplet.png" id="13_mi8sy"]
-[ext_resource type="PackedScene" uid="uid://chtm5rrt4ee8i" path="res://scenes/pot.tscn" id="14_hi6tv"]
+[ext_resource type="Script" path="res://scenes/water_regen_area.gd" id="13_pg3wh"]
+[ext_resource type="PackedScene" uid="uid://dayjr02m01dcl" path="res://scenes/pot.tscn" id="14_hi6tv"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pv50g"]
 distance = -111.0
@@ -323,4 +324,14 @@ layout_mode = 2
 texture = ExtResource("13_mi8sy")
 stretch_mode = 3
 
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(481, 17)
+script = ExtResource("13_pg3wh")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(-11, -2)
+polygon = PackedVector2Array(-35, -11, -35, 16, 10, 16, 10, -10)
+
 [connection signal="body_entered" from="Pot/Pot" to="Pot/Pot" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
