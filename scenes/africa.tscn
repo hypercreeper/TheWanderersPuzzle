@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://ptb23jubexxh" path="res://assets/sprites/coinicon.png" id="9_e27jd"]
 [ext_resource type="FontFile" uid="uid://ctui8lbqt0mdi" path="res://font.ttf" id="9_f6bur"]
 [ext_resource type="Texture2D" uid="uid://m5rjric0phad" path="res://assets/sprites/droplet.png" id="10_8dg52"]
-[ext_resource type="PackedScene" uid="uid://chtm5rrt4ee8i" path="res://scenes/pot.tscn" id="10_r0i2g"]
+[ext_resource type="PackedScene" uid="uid://dayjr02m01dcl" path="res://scenes/pot.tscn" id="10_r0i2g"]
 [ext_resource type="Script" path="res://scenes/water_regen_area.gd" id="13_johc0"]
 [ext_resource type="Texture2D" uid="uid://c8242ptcdjfqa" path="res://assets/sprites/sheikh a.png" id="15_srpjx"]
 
@@ -433,6 +433,14 @@ position = Vector2(2592, -102)
 scale = Vector2(0.0752253, 0.0752253)
 texture = ExtResource("15_srpjx")
 flip_h = true
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(1694, 34)
+script = ExtResource("13_johc0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D2"]
+position = Vector2(-11, -2)
+polygon = PackedVector2Array(-35, -11, -35, 16, 29, 16, 29, 0, 45, 0, 45, -11)
 
 [connection signal="body_entered" from="Pot/Pot" to="Pot/Pot" method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
