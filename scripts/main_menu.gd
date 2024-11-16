@@ -19,13 +19,14 @@ func _ready() -> void:
 	quit_button.mouse_exited.connect(func(): _on_button_exit(quit_button))
 	start_button.button_down.connect(on_start_pressed)
 	quit_button.button_down.connect(on_quit_pressed)
-
+	
 func on_start_pressed() -> void:
 	start_button.disabled=true
 	click_sound.play()
 	await click_sound.finished
 	animation_player.play("fade out")
 	await animation_player.animation_finished
+	GameManagerss.last_scene = "MainMenu"
 	get_tree().change_scene_to_packed(startmain)
 
 func on_quit_pressed() -> void:

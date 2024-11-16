@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://c13r6gm7njvc4"]
+[gd_scene load_steps=15 format=3 uid="uid://c13r6gm7njvc4"]
 
+[ext_resource type="Script" path="res://scripts/startmain.gd" id="1_n6vhh"]
 [ext_resource type="Texture2D" uid="uid://mup6m2w5jy2b" path="res://assets/sprites/Map.png" id="1_qx8j2"]
 [ext_resource type="Texture2D" uid="uid://dggjp3uwyo3ej" path="res://assets/sprites/Scrollthing.png" id="2_yju6b"]
 [ext_resource type="Texture2D" uid="uid://bo3jcgm7tjtbp" path="res://assets/sprites/ArabiaMapIndicator.png" id="3_lirg2"]
@@ -54,6 +55,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_n6vhh")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
