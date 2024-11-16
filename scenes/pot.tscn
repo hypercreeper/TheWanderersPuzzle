@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dayjr02m01dcl"]
+
+[ext_resource type="Script" path="res://scripts/pot.gd" id="1_xmp4l"]
+[ext_resource type="Texture2D" uid="uid://7q7ex34icnnx" path="res://assets/sprites/pot.png" id="2_1d08w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y1315"]
+radius = 4.12311
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cw5jq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1d08w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Pot" type="Area2D"]
+script = ExtResource("1_xmp4l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_y1315")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cw5jq")
