@@ -403,31 +403,22 @@ theme_override_font_sizes/font_size = 16
 text = "Find Sheikh Burhanuddin..."
 
 [node name="Label3" type="Label" parent="."]
-offset_left = 308.0
+offset_left = 343.0
+offset_top = -94.0
+offset_right = 671.0
+offset_bottom = -71.0
+theme_override_fonts/font = ExtResource("9_f6bur")
+theme_override_font_sizes/font_size = 16
+text = "And Stay Hydrated..."
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 1136.0
 offset_top = -105.0
-offset_right = 636.0
+offset_right = 1536.0
 offset_bottom = -82.0
 theme_override_fonts/font = ExtResource("9_f6bur")
 theme_override_font_sizes/font_size = 16
-text = "Stay Hydrated..."
-
-[node name="Label4" type="Label" parent="."]
-offset_left = 598.0
-offset_top = -113.0
-offset_right = 926.0
-offset_bottom = -90.0
-theme_override_fonts/font = ExtResource("9_f6bur")
-theme_override_font_sizes/font_size = 16
 text = "Almost There..."
-
-[node name="Label5" type="Label" parent="."]
-offset_left = 1353.0
-offset_top = -49.0
-offset_right = 1753.0
-offset_bottom = -26.0
-theme_override_fonts/font = ExtResource("9_f6bur")
-theme_override_font_sizes/font_size = 16
-text = "Almost There... Stay Hydrated..."
 
 [node name="SheikhA" type="Sprite2D" parent="."]
 position = Vector2(2592, -102)
