@@ -10,7 +10,7 @@
 [ext_resource type="FontFile" uid="uid://dlk0p5n2mdgm4" path="res://assets/fonts/PixelOperator8.ttf" id="7_0kru8"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="8_o3f3k"]
 [ext_resource type="Texture2D" uid="uid://ptb23jubexxh" path="res://assets/sprites/coinicon.png" id="9_e27jd"]
-[ext_resource type="PackedScene" path="res://scenes/pot.tscn" id="10_r0i2g"]
+[ext_resource type="PackedScene" uid="uid://dayjr02m01dcl" path="res://scenes/pot.tscn" id="10_r0i2g"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pv50g"]
 distance = -111.0
@@ -329,7 +329,8 @@ shape = SubResource("RectangleShape2D_u0ng8")
 [node name="Node" type="Node" parent="."]
 
 [node name="coin7" parent="Node" instance=ExtResource("5_d13rt")]
-position = Vector2(8, -33)
+visible = false
+position = Vector2(3, -257)
 
 [node name="Pot" parent="Node" instance=ExtResource("10_r0i2g")]
 position = Vector2(8, -8)

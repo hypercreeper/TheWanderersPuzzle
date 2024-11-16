@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dayjr02m01dcl"]
+[gd_scene load_steps=6 format=3 uid="uid://dayjr02m01dcl"]
 
 [ext_resource type="Script" path="res://scripts/pot.gd" id="1_xmp4l"]
 [ext_resource type="Texture2D" uid="uid://7q7ex34icnnx" path="res://assets/sprites/pot.png" id="2_1d08w"]
+[ext_resource type="Texture2D" uid="uid://l3frqv7h8tut" path="res://assets/sprites/broken_pot.png" id="3_4unag"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y1315"]
 radius = 4.12311
@@ -11,6 +12,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_1d08w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4unag")
 }],
 "loop": true,
 "name": &"default",
