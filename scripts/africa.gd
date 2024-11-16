@@ -3,6 +3,8 @@ extends Node2D
 @onready var game_manager: Node = %"Game Manager"
 @onready var replenishing_label: Label = $Player/Camera2D/ReplenishingLabel
 
+
+
 static var regenerating_water = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
