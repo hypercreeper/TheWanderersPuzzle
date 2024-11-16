@@ -286,7 +286,7 @@ visible = false
 position = Vector2(200, -41)
 
 [node name="coin6" parent="Coins" instance=ExtResource("5_d13rt")]
-position = Vector2(-295, -9)
+position = Vector2(-244, -7)
 
 [node name="Player" parent="." instance=ExtResource("6_mgqva")]
 position = Vector2(-135, 14)
