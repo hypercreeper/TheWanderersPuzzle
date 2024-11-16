@@ -6,7 +6,7 @@ var broken = false
 func _on_body_entered(body: Node2D) -> void:
 	if not self.broken:
 		SoundFx.play_pot_break()
-		coin.position = Vector2(24.0, -8.0)
+		coin.position = Vector2(self.position.x+15, self.position.y)
 		coin.show()
 		$AnimatedSprite2D.frame = 1
 		self.broken = true
