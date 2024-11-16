@@ -1,0 +1,185 @@
+[gd_scene load_steps=14 format=3 uid="uid://c13r6gm7njvc4"]
+
+[ext_resource type="Texture2D" uid="uid://mup6m2w5jy2b" path="res://assets/sprites/Map.png" id="1_qx8j2"]
+[ext_resource type="Texture2D" uid="uid://dggjp3uwyo3ej" path="res://assets/sprites/Scrollthing.png" id="2_yju6b"]
+[ext_resource type="Texture2D" uid="uid://bo3jcgm7tjtbp" path="res://assets/sprites/ArabiaMapIndicator.png" id="3_lirg2"]
+[ext_resource type="FontFile" uid="uid://dlk0p5n2mdgm4" path="res://assets/fonts/PixelOperator8.ttf" id="4_krfww"]
+[ext_resource type="Script" path="res://scripts/arabiabutton.gd" id="5_3fa2u"]
+[ext_resource type="Texture2D" uid="uid://h838c8thmkjx" path="res://assets/sprites/AfricaMapIndicator.png" id="6_nw1ww"]
+[ext_resource type="Texture2D" uid="uid://7jivgws2m8b1" path="res://assets/sprites/IndiaMapIndicator.png" id="7_1gysm"]
+[ext_resource type="Script" path="res://scripts/africa_button.gd" id="7_rpkon"]
+[ext_resource type="Script" path="res://scripts/india_button.gd" id="9_m2mjl"]
+[ext_resource type="AudioStream" uid="uid://bvxc6m6aejbfu" path="res://assets/music/old-radio-button-click-97549.mp3" id="10_w7y1a"]
+
+[sub_resource type="Animation" id="Animation_kb8hs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2anj3"]
+resource_name = "fade in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0n3b8"]
+_data = {
+"RESET": SubResource("Animation_kb8hs"),
+"fade in": SubResource("Animation_2anj3")
+}
+
+[node name="StartMain" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qx8j2")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Arabia Button Group" type="Node" parent="TextureRect"]
+
+[node name="Scrollthing" type="Sprite2D" parent="TextureRect/Arabia Button Group"]
+position = Vector2(708.5, 284.813)
+scale = Vector2(3.32813, 3.50586)
+texture = ExtResource("2_yju6b")
+
+[node name="ArabiaMapIndicator" type="Sprite2D" parent="TextureRect/Arabia Button Group"]
+position = Vector2(700, 190)
+scale = Vector2(2.4375, 2.4375)
+texture = ExtResource("3_lirg2")
+
+[node name="Arabia Button" type="Button" parent="TextureRect/Arabia Button Group"]
+offset_left = 620.0
+offset_top = 198.0
+offset_right = 799.0
+offset_bottom = 341.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_krfww")
+theme_override_font_sizes/font_size = 29
+text = "
+Arabia"
+flat = true
+icon_alignment = 1
+script = ExtResource("5_3fa2u")
+metadata/_edit_use_anchors_ = true
+
+[node name="Africa Button Group" type="Node" parent="TextureRect"]
+
+[node name="Scrollthing" type="Sprite2D" parent="TextureRect/Africa Button Group"]
+position = Vector2(510.5, 513.813)
+scale = Vector2(3.32813, 3.50586)
+texture = ExtResource("2_yju6b")
+
+[node name="AfricaMapIndicator" type="Sprite2D" parent="TextureRect/Africa Button Group"]
+position = Vector2(502, 419)
+scale = Vector2(2.4375, 2.4375)
+texture = ExtResource("6_nw1ww")
+
+[node name="Africa Button" type="Button" parent="TextureRect/Africa Button Group"]
+offset_left = 422.0
+offset_top = 427.0
+offset_right = 601.0
+offset_bottom = 570.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_krfww")
+theme_override_font_sizes/font_size = 29
+text = "
+Africa"
+flat = true
+icon_alignment = 1
+script = ExtResource("7_rpkon")
+metadata/_edit_use_anchors_ = true
+
+[node name="India Button Group" type="Node" parent="TextureRect"]
+
+[node name="Scrollthing" type="Sprite2D" parent="TextureRect/India Button Group"]
+position = Vector2(998.5, 325.813)
+scale = Vector2(3.32813, 3.50586)
+texture = ExtResource("2_yju6b")
+
+[node name="IndiaMapIndicator" type="Sprite2D" parent="TextureRect/India Button Group"]
+position = Vector2(998, 251)
+scale = Vector2(2.4375, 2.4375)
+texture = ExtResource("7_1gysm")
+
+[node name="India Button" type="Button" parent="TextureRect/India Button Group"]
+offset_left = 910.0
+offset_top = 239.0
+offset_right = 1089.0
+offset_bottom = 382.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_krfww")
+theme_override_font_sizes/font_size = 29
+text = "
+India"
+flat = true
+icon_alignment = 1
+script = ExtResource("9_m2mjl")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("4_krfww")
+theme_override_font_sizes/font_size = 64
+text = "The Wanderer's Puzzle"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0n3b8")
+}
+
+[node name="ClickSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_w7y1a")
+volume_db = 8.0
