@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://scripts/arabia.gd" id="1_1cctq"]
 [ext_resource type="PackedScene" uid="uid://r8m8x8myq4cf" path="res://scenes/killzone.tscn" id="1_m67a3"]
 [ext_resource type="Texture2D" uid="uid://dnei68v4e2bu2" path="res://assets/sprites/world_tileset.png" id="2_d4jso"]
-[ext_resource type="Texture2D" uid="uid://c31prv6yomi6b" path="res://assets/backdrops/parallax Arabia/arabiaparallaxtop.png" id="2_yiyju"]
 [ext_resource type="PackedScene" uid="uid://t68og48b4rdo" path="res://scenes/platform.tscn" id="3_ppbth"]
 [ext_resource type="PackedScene" uid="uid://jydo4aaf5u7y" path="res://scenes/enemy.tscn" id="4_ssokk"]
 [ext_resource type="PackedScene" uid="uid://chqftqp6qaoih" path="res://scenes/coin.tscn" id="5_prvoh"]
@@ -11,8 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://ptb23jubexxh" path="res://assets/sprites/coinicon.png" id="7_08cdo"]
 [ext_resource type="FontFile" uid="uid://dlk0p5n2mdgm4" path="res://assets/fonts/PixelOperator8.ttf" id="7_wiumm"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="8_a74yd"]
-[ext_resource type="Texture2D" uid="uid://m5rjric0phad" path="res://assets/sprites/droplet.png" id="10_hd01n"]
-[ext_resource type="PackedScene" uid="uid://dayjr02m01dcl" path="res://scenes/pot.tscn" id="11_mtygl"]
+[ext_resource type="PackedScene" uid="uid://chtm5rrt4ee8i" path="res://scenes/pot.tscn" id="11_mtygl"]
+[ext_resource type="Texture2D" uid="uid://m5rjric0phad" path="res://assets/sprites/droplet.png" id="12_3sb2g"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pv50g"]
 distance = -111.0
@@ -225,10 +224,6 @@ _data = {
 [node name="Game3" type="Node2D"]
 script = ExtResource("1_1cctq")
 
-[node name="Arabiaparallaxtop" type="Sprite2D" parent="."]
-position = Vector2(89, -380)
-texture = ExtResource("2_yiyju")
-
 [node name="Killzone" parent="." instance=ExtResource("1_m67a3")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
@@ -297,8 +292,24 @@ position = Vector2(-312, -9)
 wait_time = 5.0
 autostart = true
 
+[node name="Game Manager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("8_a74yd")
+
+[node name="Enemy" parent="." instance=ExtResource("4_ssokk")]
+position = Vector2(395, -80)
+
+[node name="Pot" type="Node" parent="."]
+
+[node name="coin7" parent="Pot" instance=ExtResource("5_prvoh")]
+visible = false
+position = Vector2(3, -257)
+
+[node name="Pot" parent="Pot" instance=ExtResource("11_mtygl")]
+position = Vector2(-247, 24)
+
 [node name="Player" parent="." instance=ExtResource("6_fajs2")]
-position = Vector2(-138, 14)
+position = Vector2(-135, 14)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
@@ -329,27 +340,7 @@ stretch_mode = 3
 
 [node name="TextureRect2" type="TextureRect" parent="Player/Camera2D/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("10_hd01n")
+texture = ExtResource("12_3sb2g")
 stretch_mode = 3
-
-[node name="Game Manager" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("8_a74yd")
-
-[node name="Enemy" parent="." instance=ExtResource("4_ssokk")]
-position = Vector2(395, -80)
-
-[node name="Pot" type="Node" parent="."]
-
-[node name="coin7" parent="Pot" instance=ExtResource("5_prvoh")]
-visible = false
-position = Vector2(3, -257)
-
-[node name="Pot" parent="Pot" instance=ExtResource("11_mtygl")]
-position = Vector2(-247, 24)
-
-[node name="Game Manager" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("8_a74yd")
 
 [connection signal="body_entered" from="Pot/Pot" to="Pot/Pot" method="_on_body_entered"]

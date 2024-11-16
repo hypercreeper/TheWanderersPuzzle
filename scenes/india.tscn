@@ -13,9 +13,8 @@
 [ext_resource type="FontFile" uid="uid://dlk0p5n2mdgm4" path="res://assets/fonts/PixelOperator8.ttf" id="7_or6cf"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="8_d78wt"]
 [ext_resource type="Texture2D" uid="uid://ptb23jubexxh" path="res://assets/sprites/coinicon.png" id="8_haicm"]
-[ext_resource type="PackedScene" uid="uid://chtm5rrt4ee8i" path="res://scenes/pot.tscn" id="14_hi6tv"]
 [ext_resource type="Texture2D" uid="uid://m5rjric0phad" path="res://assets/sprites/droplet.png" id="13_mi8sy"]
-[ext_resource type="PackedScene" uid="uid://dayjr02m01dcl" path="res://scenes/pot.tscn" id="14_hi6tv"]
+[ext_resource type="PackedScene" uid="uid://chtm5rrt4ee8i" path="res://scenes/pot.tscn" id="14_hi6tv"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pv50g"]
 distance = -111.0
@@ -332,8 +331,25 @@ position = Vector2(-295, -9)
 [node name="coin7" parent="Coins" instance=ExtResource("5_rskei")]
 position = Vector2(-312, -9)
 
+[node name="Game Manager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("8_d78wt")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="Pot" type="Node" parent="."]
+
+[node name="coin7" parent="Pot" instance=ExtResource("5_rskei")]
+visible = false
+position = Vector2(3, -257)
+
+[node name="Pot" parent="Pot" instance=ExtResource("14_hi6tv")]
+position = Vector2(-119, 40)
+
 [node name="Player" parent="." instance=ExtResource("6_tp23j")]
-position = Vector2(-138, 14)
+position = Vector2(-135, 14)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
@@ -366,22 +382,5 @@ stretch_mode = 3
 layout_mode = 2
 texture = ExtResource("13_mi8sy")
 stretch_mode = 3
-
-[node name="Game Manager" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("8_d78wt")
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
-autostart = true
-
-[node name="Pot" type="Node" parent="."]
-
-[node name="coin7" parent="Pot" instance=ExtResource("5_rskei")]
-visible = false
-position = Vector2(3, -257)
-
-[node name="Pot" parent="Pot" instance=ExtResource("14_hi6tv")]
-position = Vector2(-119, 40)
 
 [connection signal="body_entered" from="Pot/Pot" to="Pot/Pot" method="_on_body_entered"]
