@@ -327,7 +327,6 @@ shape = SubResource("RectangleShape2D_u0ng8")
 [node name="Node" type="Node" parent="."]
 
 [node name="coin7" parent="Node" instance=ExtResource("5_d13rt")]
-visible = false
 position = Vector2(8, -33)
 
 [node name="Pot" parent="Node" instance=ExtResource("10_r0i2g")]

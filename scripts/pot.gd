@@ -6,4 +6,4 @@ func _on_body_entered(body: Node2D) -> void:
 	self.hide()
 	coin.show()
 	
-	queue_free()
+	#queue_free()
