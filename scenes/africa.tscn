@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://f7lgj8fx3wbq"]
+[gd_scene load_steps=25 format=3 uid="uid://f7lgj8fx3wbq"]
 
 [ext_resource type="Script" path="res://scripts/africa.gd" id="1_obonr"]
 [ext_resource type="PackedScene" uid="uid://r8m8x8myq4cf" path="res://scenes/killzone.tscn" id="1_yobu8"]
@@ -7,12 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://jydo4aaf5u7y" path="res://scenes/enemy.tscn" id="4_qsgag"]
 [ext_resource type="PackedScene" uid="uid://chqftqp6qaoih" path="res://scenes/coin.tscn" id="5_d13rt"]
 [ext_resource type="PackedScene" uid="uid://b0c8k3vkt3vcx" path="res://scenes/player.tscn" id="6_mgqva"]
-[ext_resource type="FontFile" uid="uid://dlk0p5n2mdgm4" path="res://assets/fonts/PixelOperator8.ttf" id="7_0kru8"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="8_o3f3k"]
 [ext_resource type="Texture2D" uid="uid://ptb23jubexxh" path="res://assets/sprites/coinicon.png" id="9_e27jd"]
 [ext_resource type="FontFile" uid="uid://ctui8lbqt0mdi" path="res://font.ttf" id="9_f6bur"]
 [ext_resource type="Texture2D" uid="uid://m5rjric0phad" path="res://assets/sprites/droplet.png" id="10_8dg52"]
-[ext_resource type="PackedScene" uid="uid://chtm5rrt4ee8i" path="res://scenes/pot.tscn" id="10_r0i2g"]
+[ext_resource type="PackedScene" uid="uid://dayjr02m01dcl" path="res://scenes/pot.tscn" id="10_r0i2g"]
 [ext_resource type="Script" path="res://scripts/water_regen_area.gd" id="13_f7tpy"]
 [ext_resource type="PackedScene" uid="uid://ccof37bnd811a" path="res://scenes/sheikhAbduhandun.tscn" id="14_xl5kl"]
 
@@ -236,11 +235,6 @@ _data = {
 "RESET": SubResource("Animation_ded0n")
 }
 
-[sub_resource type="LabelSettings" id="LabelSettings_54v6e"]
-font = ExtResource("9_f6bur")
-font_size = 8
-font_color = Color(0.212839, 0.439923, 1, 1)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0ng8"]
 size = Vector2(20, 394)
 
@@ -346,13 +340,17 @@ limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="ReplenishingLabel" type="Label" parent="Player/Camera2D"]
-offset_left = -40.0
-offset_top = -27.0
-offset_right = 53.0
-offset_bottom = -18.0
-theme_override_fonts/font = ExtResource("7_0kru8")
+offset_left = -39.0
+offset_top = -25.0
+offset_right = 108.0
+offset_bottom = -2.0
+theme_override_colors/font_color = Color(0.212839, 0.439923, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.212839, 0.439923, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("9_f6bur")
+theme_override_font_sizes/font_size = 8
 text = "Replenishing..."
-label_settings = SubResource("LabelSettings_54v6e")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Player/Camera2D"]
 offset_left = -136.0
@@ -362,9 +360,13 @@ offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="Player/Camera2D/HBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("7_0kru8")
-text = "Score: 23
-Water: 21"
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("9_f6bur")
+theme_override_font_sizes/font_size = 16
+text = "Score: 0
+Water: 15"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Player/Camera2D/HBoxContainer"]
 layout_mode = 2
@@ -416,48 +418,68 @@ position = Vector2(-11, -2)
 polygon = PackedVector2Array(-35, -11, -35, 16, 29, 16, 29, 0, 45, 0, 45, -11)
 
 [node name="Label" type="Label" parent="."]
-offset_left = -169.0
+offset_left = -134.0
 offset_top = -23.0
-offset_right = -13.0
+offset_right = 13.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("9_f6bur")
-theme_override_font_sizes/font_size = 16
-text = "Ibn Batuta..."
+theme_override_font_sizes/font_size = 8
+text = "Ibn Battuta..."
+autowrap_mode = 3
 
 [node name="Label2" type="Label" parent="."]
-offset_left = -73.0
+offset_left = -38.0
 offset_top = -72.0
-offset_right = 225.0
+offset_right = 109.0
 offset_bottom = -49.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("9_f6bur")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 8
 text = "Find Sheikh Burhanuddin..."
-
-[node name="Label3" type="Label" parent="."]
-offset_left = 308.0
-offset_top = -105.0
-offset_right = 636.0
-offset_bottom = -82.0
-theme_override_fonts/font = ExtResource("9_f6bur")
-theme_override_font_sizes/font_size = 16
-text = "Stay Hydrated..."
+autowrap_mode = 3
 
 [node name="Label4" type="Label" parent="."]
-offset_left = 598.0
-offset_top = -113.0
-offset_right = 926.0
-offset_bottom = -90.0
+offset_left = 75.0
+offset_top = -76.0
+offset_right = 222.0
+offset_bottom = -53.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("9_f6bur")
-theme_override_font_sizes/font_size = 16
-text = "Almost There..."
+theme_override_font_sizes/font_size = 8
+text = "Collect Coins..."
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 271.0
+offset_top = -83.0
+offset_right = 418.0
+offset_bottom = -60.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("9_f6bur")
+theme_override_font_sizes/font_size = 8
+text = "And Stay Hydrated."
+autowrap_mode = 3
 
 [node name="Label5" type="Label" parent="."]
-offset_left = 1353.0
-offset_top = -49.0
-offset_right = 1753.0
-offset_bottom = -26.0
+offset_left = 1850.0
+offset_top = -90.0
+offset_right = 1997.0
+offset_bottom = -67.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("9_f6bur")
-theme_override_font_sizes/font_size = 16
-text = "Almost There... Stay Hydrated..."
+theme_override_font_sizes/font_size = 8
+text = "Almost There..."
+autowrap_mode = 3
 
 [node name="Area2D2" type="Area2D" parent="."]
 position = Vector2(1694, 34)

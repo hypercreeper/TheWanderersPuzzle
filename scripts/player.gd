@@ -48,7 +48,7 @@ func _input(event: InputEvent) -> void:
 		#if game_manager.in_convo:
 			var tree = get_tree()
 			if tree != null:
-				tree.change_scene_to_file("res://scenes/startmain.tscn")
+				tree.change_scene_to_file("res://scenes/main_menu.tscn")
 				print(GameManagerss.score)
 			else:
 				pass
