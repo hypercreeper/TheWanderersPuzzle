@@ -60,7 +60,7 @@ func _on_letter_display_timer_timeout() -> void:
 anchors_preset = -1
 anchor_right = 0.458
 anchor_bottom = 0.617
-offset_right = 8.38397
+offset_right = -14.616
 offset_bottom = 113.184
 grow_horizontal = 2
 grow_vertical = 2
