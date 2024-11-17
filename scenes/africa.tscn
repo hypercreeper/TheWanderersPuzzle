@@ -354,10 +354,10 @@ theme_override_font_sizes/font_size = 8
 text = "Replenishing..."
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Player/Camera2D"]
-offset_left = -97.0
-offset_top = -164.0
-offset_right = 79.0
-offset_bottom = 41.0
+offset_left = -141.0
+offset_top = -154.0
+offset_right = 35.0
+offset_bottom = 51.0
 
 [node name="Label" type="Label" parent="Player/Camera2D/HBoxContainer"]
 layout_mode = 2

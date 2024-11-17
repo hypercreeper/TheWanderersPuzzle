@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://h2fm780o0lm4"]
+[gd_scene load_steps=25 format=3 uid="uid://h2fm780o0lm4"]
 
 [ext_resource type="Script" path="res://scripts/arabia.gd" id="1_e4g2j"]
 [ext_resource type="PackedScene" uid="uid://r8m8x8myq4cf" path="res://scenes/killzone.tscn" id="1_m67a3"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="8_a74yd"]
 [ext_resource type="PackedScene" uid="uid://chtm5rrt4ee8i" path="res://scenes/pot.tscn" id="11_mtygl"]
 [ext_resource type="Texture2D" uid="uid://m5rjric0phad" path="res://assets/sprites/droplet.png" id="12_3sb2g"]
+[ext_resource type="Texture2D" uid="uid://7q7ex34icnnx" path="res://assets/sprites/pot.png" id="12_rs80p"]
 [ext_resource type="PackedScene" uid="uid://cuisthmr36axt" path="res://scenes/sheikh_b.tscn" id="13_1yehl"]
 [ext_resource type="Script" path="res://scripts/water_regen_area.gd" id="13_7wuoa"]
 [ext_resource type="FontFile" uid="uid://ctui8lbqt0mdi" path="res://font.ttf" id="15_wupgs"]
@@ -421,10 +422,10 @@ theme_override_font_sizes/font_size = 8
 text = "Replenishing..."
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Player/Camera2D"]
-offset_left = -136.0
-offset_top = -165.0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -141.0
+offset_top = -154.0
+offset_right = 35.0
+offset_bottom = 51.0
 
 [node name="Label" type="Label" parent="Player/Camera2D/HBoxContainer"]
 layout_mode = 2
@@ -432,9 +433,12 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("15_wupgs")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 8
 text = "Score: 0
-Water: 15"
+
+Water: 15
+
+Artifact: 0"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Player/Camera2D/HBoxContainer"]
 layout_mode = 2
@@ -443,11 +447,17 @@ alignment = 1
 [node name="TextureRect" type="TextureRect" parent="Player/Camera2D/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 texture = ExtResource("7_08cdo")
-stretch_mode = 3
+expand_mode = 5
+stretch_mode = 5
 
 [node name="TextureRect2" type="TextureRect" parent="Player/Camera2D/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 texture = ExtResource("12_3sb2g")
+stretch_mode = 3
+
+[node name="TextureRect3" type="TextureRect" parent="Player/Camera2D/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("12_rs80p")
 stretch_mode = 3
 
 [node name="Area2D2" type="Area2D" parent="."]
