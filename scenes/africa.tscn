@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ptb23jubexxh" path="res://assets/sprites/coinicon.png" id="9_e27jd"]
 [ext_resource type="FontFile" uid="uid://ctui8lbqt0mdi" path="res://font.ttf" id="9_f6bur"]
 [ext_resource type="Texture2D" uid="uid://m5rjric0phad" path="res://assets/sprites/droplet.png" id="10_8dg52"]
-[ext_resource type="PackedScene" uid="uid://dayjr02m01dcl" path="res://scenes/pot.tscn" id="10_r0i2g"]
+[ext_resource type="PackedScene" uid="uid://chtm5rrt4ee8i" path="res://scenes/pot.tscn" id="10_r0i2g"]
 [ext_resource type="Script" path="res://scripts/water_regen_area.gd" id="13_f7tpy"]
 [ext_resource type="PackedScene" uid="uid://ccof37bnd811a" path="res://scenes/sheikhAbduhandun.tscn" id="14_xl5kl"]
 
