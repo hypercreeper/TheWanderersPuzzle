@@ -28,7 +28,7 @@ func _on_body_exited(body: Node2D) -> void:
 		elif GameManagerss.last_scene == "arabia":
 			timer.start(4)
 		elif GameManagerss.last_scene == "india":
-			timer.start(2)
+			timer.start(5)
 		
 		game.regenerating_water = false
 		print(game.regenerating_water)

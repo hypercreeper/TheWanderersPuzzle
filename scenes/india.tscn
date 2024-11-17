@@ -262,9 +262,6 @@ autoplay = "peniscocksucker"
 
 [node name="Coins" type="Node" parent="."]
 
-[node name="coin" parent="Coins" instance=ExtResource("5_rskei")]
-position = Vector2(-34, -36)
-
 [node name="coin3" parent="Coins" instance=ExtResource("5_rskei")]
 position = Vector2(138, -44)
 
@@ -299,7 +296,7 @@ position = Vector2(344, -262)
 position = Vector2(313, -279)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 4.0
 autostart = true
 
 [node name="Pot" type="Node" parent="."]
@@ -348,10 +345,10 @@ limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="ReplenishingLabel" type="Label" parent="Player/Camera2D"]
-offset_left = -39.0
-offset_top = -67.425
-offset_right = 108.0
-offset_bottom = -51.15
+offset_left = -38.65
+offset_top = -53.425
+offset_right = 108.35
+offset_bottom = -30.425
 theme_override_colors/font_color = Color(0.212839, 0.439923, 1, 1)
 theme_override_colors/font_shadow_color = Color(0.212839, 0.439923, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
