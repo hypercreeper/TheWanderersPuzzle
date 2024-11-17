@@ -16,7 +16,7 @@ func _ready():
 
 func _process(_delta):
 	if player_in_range and Input.is_action_just_pressed("ui_accept"):
-		if GameManagerss.score >= 2:
+		if GameManagerss.score >= 15:
 			show_next_dialogue()
 			label_2.visible=false
 		else:
@@ -25,7 +25,7 @@ func _process(_delta):
 
 func _on_body_entered(body):
 	player_in_range = true
-	if GameManagerss.score >= 2:
+	if GameManagerss.score >= 15:
 		label_2.text = "Press Enter to talk"
 	else:
 		label_2.text = "Collect all coins first!"

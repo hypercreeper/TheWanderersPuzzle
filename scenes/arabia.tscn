@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://h2fm780o0lm4"]
+[gd_scene load_steps=23 format=3 uid="uid://h2fm780o0lm4"]
 
 [ext_resource type="PackedScene" uid="uid://r8m8x8myq4cf" path="res://scenes/killzone.tscn" id="1_m67a3"]
 [ext_resource type="Texture2D" uid="uid://dnei68v4e2bu2" path="res://assets/sprites/world_tileset.png" id="2_d4jso"]
@@ -9,8 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://ptb23jubexxh" path="res://assets/sprites/coinicon.png" id="7_08cdo"]
 [ext_resource type="FontFile" uid="uid://dlk0p5n2mdgm4" path="res://assets/fonts/PixelOperator8.ttf" id="7_wiumm"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="8_a74yd"]
-[ext_resource type="PackedScene" uid="uid://dayjr02m01dcl" path="res://scenes/pot.tscn" id="11_mtygl"]
+[ext_resource type="PackedScene" uid="uid://chtm5rrt4ee8i" path="res://scenes/pot.tscn" id="11_mtygl"]
 [ext_resource type="Texture2D" uid="uid://m5rjric0phad" path="res://assets/sprites/droplet.png" id="12_3sb2g"]
+[ext_resource type="PackedScene" uid="uid://cuisthmr36axt" path="res://scenes/sheikh_b.tscn" id="13_1yehl"]
 [ext_resource type="Script" path="res://scripts/water_regen_area.gd" id="13_7wuoa"]
 [ext_resource type="FontFile" uid="uid://ctui8lbqt0mdi" path="res://font.ttf" id="15_wupgs"]
 
@@ -350,10 +351,10 @@ position = Vector2(3, -257)
 position = Vector2(568, -88)
 
 [node name="Label4" type="Label" parent="."]
-offset_left = -220.0
-offset_top = -31.0
-offset_right = -4.0
-offset_bottom = -15.0
+offset_left = -86.0
+offset_top = -61.0
+offset_right = 130.0
+offset_bottom = -45.0
 theme_override_fonts/font = ExtResource("15_wupgs")
 theme_override_font_sizes/font_size = 16
 text = "Find Burhadoon..."
@@ -402,10 +403,6 @@ layout_mode = 2
 texture = ExtResource("12_3sb2g")
 stretch_mode = 3
 
-[node name="Game Manager" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("8_a74yd")
-
 [node name="Area2D2" type="Area2D" parent="."]
 position = Vector2(732, -83)
 script = ExtResource("13_7wuoa")
@@ -413,6 +410,13 @@ script = ExtResource("13_7wuoa")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D2"]
 position = Vector2(-11, -2)
 polygon = PackedVector2Array(-33, -6, -33, 37, 30, 38, 31, -7)
+
+[node name="Sheikh_B" parent="." instance=ExtResource("13_1yehl")]
+position = Vector2(82, -206)
+
+[node name="Game Manager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("8_a74yd")
 
 [connection signal="body_entered" from="Pot/Pot" to="Pot/Pot" method="_on_body_entered"]
 [connection signal="body_entered" from="Pot2/Pot" to="Pot2/Pot" method="_on_body_entered"]
