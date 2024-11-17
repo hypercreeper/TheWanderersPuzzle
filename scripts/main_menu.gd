@@ -2,7 +2,6 @@ class_name Main_Menu
 extends Control
 
 @onready var start_button: Button = $"MarginContainer/HBoxContainer/VBoxContainer/Start Button" as Button
-@onready var options_button: Button = $"MarginContainer/HBoxContainer/VBoxContainer/Options Button" as Button
 @onready var quit_button: Button = $"MarginContainer/HBoxContainer/VBoxContainer/Quit Button" as Button
 @onready var startmain = preload("res://scenes/startmain.tscn") as PackedScene
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -12,10 +11,8 @@ extends Control
 func _ready() -> void:
 	SoundFx.background_music()
 	start_button.mouse_entered.connect(func(): _on_button_hover(start_button))
-	options_button.mouse_entered.connect(func(): _on_button_hover(options_button))
 	quit_button.mouse_entered.connect(func(): _on_button_hover(quit_button))
 	start_button.mouse_exited.connect(func(): _on_button_exit(start_button))
-	options_button.mouse_exited.connect(func(): _on_button_exit(options_button))
 	quit_button.mouse_exited.connect(func(): _on_button_exit(quit_button))
 	start_button.button_down.connect(on_start_pressed)
 	quit_button.button_down.connect(on_quit_pressed)
