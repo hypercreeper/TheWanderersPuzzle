@@ -2,12 +2,13 @@ extends Node2D
 
 # Variables
 var player_in_range = false
-var dialogue_texts = ["Ibn Batuta...","It seems to me that you are fond of foreign travel","You must visit my brother Fariduddin in India","and Burhudin in Arabia","Convey my greetings to them..."]
+var dialogue_texts = ["Thank you for finding me","I hope my brother is well", "Ibn Battuta...","For your efforts you will receive 20 Artifacts"]
 var current_dialogue_index = 0
 @onready var dialogue_label: Label = $Control/Label
 @onready var detection_area: Area2D = $DetectionArea
 @onready var label_2: Label = $Control/Label2
 @onready var animation_player: AnimationPlayer = $"../AnimationPlayer"
+@onready var game_manager: Node = %"Game Manager"
 
 func _ready():
 	detection_area.body_entered.connect(_on_body_entered)
@@ -45,6 +46,7 @@ func show_next_dialogue():
 		current_dialogue_index += 1
 	else:
 		GameManagerss.artifacts += 20
+		game_manager.update_water_label()
 		dialogue_label.text = "Congratulations! You found all 50 artifacts!"
 		dialogue_label.show()
 		current_dialogue_index = 0

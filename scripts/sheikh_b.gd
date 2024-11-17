@@ -8,6 +8,7 @@ var current_dialogue_index = 0
 @onready var detection_area: Area2D = $DetectionArea
 @onready var label_2: Label = $Control/Label2
 @onready var animation_player: AnimationPlayer = $"../AnimationPlayer"
+@onready var game_manager: Node = %"Game Manager"
 
 func _ready():
 	detection_area.body_entered.connect(_on_body_entered)
@@ -44,6 +45,8 @@ func show_next_dialogue():
 		dialogue_label.show()
 		current_dialogue_index += 1
 	else:
+		GameManagerss.artifacts += 30
+		game_manager.update_water_label()
 		animation_player.play("fade out")
 		await animation_player.animation_finished
 		get_tree().change_scene_to_file("res://scenes/india.tscn")
