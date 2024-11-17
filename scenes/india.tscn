@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bkyki2s8wv4b2"]
+[gd_scene load_steps=21 format=3 uid="uid://bkyki2s8wv4b2"]
 
 [ext_resource type="PackedScene" uid="uid://r8m8x8myq4cf" path="res://scenes/killzone.tscn" id="1_3wrq3"]
 [ext_resource type="Script" path="res://scripts/india.gd" id="1_17ygw"]
@@ -7,14 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://jydo4aaf5u7y" path="res://scenes/enemy.tscn" id="4_kwnd7"]
 [ext_resource type="PackedScene" uid="uid://chqftqp6qaoih" path="res://scenes/coin.tscn" id="5_rskei"]
 [ext_resource type="PackedScene" uid="uid://b0c8k3vkt3vcx" path="res://scenes/player.tscn" id="6_tp23j"]
-[ext_resource type="FontFile" uid="uid://dlk0p5n2mdgm4" path="res://assets/fonts/PixelOperator8.ttf" id="7_or6cf"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="8_d78wt"]
 [ext_resource type="Texture2D" uid="uid://ptb23jubexxh" path="res://assets/sprites/coinicon.png" id="8_haicm"]
 [ext_resource type="FontFile" uid="uid://ctui8lbqt0mdi" path="res://font.ttf" id="10_xvl2m"]
 [ext_resource type="PackedScene" uid="uid://bswpoyreckh2r" path="res://scenes/sheikh_f.tscn" id="13_ddg3f"]
 [ext_resource type="Texture2D" uid="uid://m5rjric0phad" path="res://assets/sprites/droplet.png" id="13_mi8sy"]
 [ext_resource type="Script" path="res://scripts/water_regen_area.gd" id="13_pg3wh"]
-[ext_resource type="PackedScene" uid="uid://chtm5rrt4ee8i" path="res://scenes/pot.tscn" id="14_hi6tv"]
+[ext_resource type="PackedScene" uid="uid://dayjr02m01dcl" path="res://scenes/pot.tscn" id="14_hi6tv"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pv50g"]
 distance = -111.0
@@ -229,11 +228,6 @@ _data = {
 "peniscocksucker": SubResource("Animation_frtfp")
 }
 
-[sub_resource type="LabelSettings" id="LabelSettings_mkw4s"]
-font = ExtResource("10_xvl2m")
-font_size = 8
-font_color = Color(0.212839, 0.439923, 1, 1)
-
 [node name="Game" type="Node2D"]
 script = ExtResource("1_17ygw")
 
@@ -353,13 +347,17 @@ limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="ReplenishingLabel" type="Label" parent="Player/Camera2D"]
-offset_left = -40.0
-offset_top = -27.0
-offset_right = 53.0
-offset_bottom = -18.0
-theme_override_fonts/font = ExtResource("7_or6cf")
+offset_left = -39.0
+offset_top = -25.0
+offset_right = 108.0
+offset_bottom = -2.0
+theme_override_colors/font_color = Color(0.212839, 0.439923, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.212839, 0.439923, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("10_xvl2m")
+theme_override_font_sizes/font_size = 8
 text = "Replenishing..."
-label_settings = SubResource("LabelSettings_mkw4s")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Player/Camera2D"]
 offset_left = -136.0
@@ -369,9 +367,13 @@ offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="Player/Camera2D/HBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("7_or6cf")
-text = "Score: 23
-Water: 21"
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("10_xvl2m")
+theme_override_font_sizes/font_size = 16
+text = "Score: 0
+Water: 15"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Player/Camera2D/HBoxContainer"]
 layout_mode = 2
@@ -402,14 +404,18 @@ polygon = PackedVector2Array(-37, -10, -37, 17, 11, 17, 11, -10)
 unique_name_in_owner = true
 script = ExtResource("8_d78wt")
 
-[node name="Label" type="Label" parent="."]
-offset_left = -166.0
-offset_top = -18.0
-offset_right = 56.0
-offset_bottom = 5.0
+[node name="Label2" type="Label" parent="."]
+offset_left = -86.0
+offset_top = -26.0
+offset_right = 61.0
+offset_bottom = -3.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("10_xvl2m")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 8
 text = "Find Fariduddin..."
+autowrap_mode = 3
 
 [connection signal="body_entered" from="Pot/Pot22" to="Pot/Pot22" method="_on_body_entered"]
 [connection signal="body_entered" from="Pot2/Pot" to="Pot2/Pot" method="_on_body_entered"]

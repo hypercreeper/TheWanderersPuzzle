@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://h2fm780o0lm4"]
+[gd_scene load_steps=24 format=3 uid="uid://h2fm780o0lm4"]
 
 [ext_resource type="Script" path="res://scripts/arabia.gd" id="1_e4g2j"]
 [ext_resource type="PackedScene" uid="uid://r8m8x8myq4cf" path="res://scenes/killzone.tscn" id="1_m67a3"]
@@ -8,9 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://chqftqp6qaoih" path="res://scenes/coin.tscn" id="5_prvoh"]
 [ext_resource type="PackedScene" uid="uid://b0c8k3vkt3vcx" path="res://scenes/player.tscn" id="6_fajs2"]
 [ext_resource type="Texture2D" uid="uid://ptb23jubexxh" path="res://assets/sprites/coinicon.png" id="7_08cdo"]
-[ext_resource type="FontFile" uid="uid://dlk0p5n2mdgm4" path="res://assets/fonts/PixelOperator8.ttf" id="7_wiumm"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="8_a74yd"]
-[ext_resource type="PackedScene" uid="uid://chtm5rrt4ee8i" path="res://scenes/pot.tscn" id="11_mtygl"]
+[ext_resource type="PackedScene" uid="uid://dayjr02m01dcl" path="res://scenes/pot.tscn" id="11_mtygl"]
 [ext_resource type="Texture2D" uid="uid://m5rjric0phad" path="res://assets/sprites/droplet.png" id="12_3sb2g"]
 [ext_resource type="PackedScene" uid="uid://cuisthmr36axt" path="res://scenes/sheikh_b.tscn" id="13_1yehl"]
 [ext_resource type="Script" path="res://scripts/water_regen_area.gd" id="13_7wuoa"]
@@ -230,11 +229,6 @@ _data = {
 "RESET": SubResource("Animation_ded0n")
 }
 
-[sub_resource type="LabelSettings" id="LabelSettings_yken4"]
-font = ExtResource("15_wupgs")
-font_size = 8
-font_color = Color(0.212839, 0.439923, 1, 1)
-
 [sub_resource type="Animation" id="Animation_g1ug3"]
 length = 0.001
 tracks/0/type = "value"
@@ -391,14 +385,18 @@ position = Vector2(3, -257)
 [node name="Pot" parent="Pot3" instance=ExtResource("11_mtygl")]
 position = Vector2(568, -88)
 
-[node name="Label4" type="Label" parent="."]
-offset_left = -86.0
-offset_top = -61.0
-offset_right = 130.0
-offset_bottom = -45.0
+[node name="Label2" type="Label" parent="."]
+offset_left = -57.0
+offset_top = -56.0
+offset_right = 90.0
+offset_bottom = -33.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("15_wupgs")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 8
 text = "Find Burhadoon..."
+autowrap_mode = 3
 
 [node name="Player" parent="." instance=ExtResource("6_fajs2")]
 position = Vector2(-135, 29)
@@ -410,13 +408,17 @@ limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="ReplenishingLabel" type="Label" parent="Player/Camera2D"]
-offset_left = -40.0
-offset_top = -27.0
-offset_right = 53.0
-offset_bottom = -18.0
-theme_override_fonts/font = ExtResource("7_wiumm")
+offset_left = -39.0
+offset_top = -25.0
+offset_right = 108.0
+offset_bottom = -2.0
+theme_override_colors/font_color = Color(0.212839, 0.439923, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.212839, 0.439923, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("15_wupgs")
+theme_override_font_sizes/font_size = 8
 text = "Replenishing..."
-label_settings = SubResource("LabelSettings_yken4")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Player/Camera2D"]
 offset_left = -136.0
@@ -426,9 +428,13 @@ offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="Player/Camera2D/HBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("7_wiumm")
-text = "Score: 23
-Water: 21"
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("15_wupgs")
+theme_override_font_sizes/font_size = 16
+text = "Score: 0
+Water: 15"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Player/Camera2D/HBoxContainer"]
 layout_mode = 2
