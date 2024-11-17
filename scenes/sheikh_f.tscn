@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://bswpoyreckh2r"]
+
+[ext_resource type="Script" path="res://scripts/Sheikh_F.gd" id="1_nas2n"]
+[ext_resource type="Texture2D" uid="uid://c8242ptcdjfqa" path="res://assets/sprites/sheikh a.png" id="1_wcvn6"]
+[ext_resource type="FontFile" uid="uid://ctui8lbqt0mdi" path="res://font.ttf" id="2_u15kj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0364"]
+size = Vector2(33, 79)
+
+[node name="SheikhF" type="Node2D"]
+script = ExtResource("1_nas2n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -39)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("1_wcvn6")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -17.0
+offset_top = -79.0
+offset_right = 17.0
+
+[node name="Label2" type="Label" parent="Control"]
+offset_left = 35.0
+offset_right = 182.0
+offset_bottom = 23.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_u15kj")
+theme_override_font_sizes/font_size = 8
+text = "Press Enter To Speak To Sheik Fariduddin"
+autowrap_mode = 3
+
+[node name="Label" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 34.0
+offset_right = 154.0
+offset_bottom = 23.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_u15kj")
+theme_override_font_sizes/font_size = 8
+text = "Hello, Ibn Batuta"
+autowrap_mode = 3
+
+[node name="DetectionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+position = Vector2(0.5, -39.5)
+shape = SubResource("RectangleShape2D_q0364")

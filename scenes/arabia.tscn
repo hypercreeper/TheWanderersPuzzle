@@ -1,6 +1,5 @@
-[gd_scene load_steps=23 format=3 uid="uid://h2fm780o0lm4"]
+[gd_scene load_steps=21 format=3 uid="uid://h2fm780o0lm4"]
 
-[ext_resource type="Script" path="res://scripts/arabia.gd" id="1_1cctq"]
 [ext_resource type="PackedScene" uid="uid://r8m8x8myq4cf" path="res://scenes/killzone.tscn" id="1_m67a3"]
 [ext_resource type="Texture2D" uid="uid://dnei68v4e2bu2" path="res://assets/sprites/world_tileset.png" id="2_d4jso"]
 [ext_resource type="PackedScene" uid="uid://t68og48b4rdo" path="res://scenes/platform.tscn" id="3_ppbth"]
@@ -12,9 +11,9 @@
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="8_a74yd"]
 [ext_resource type="PackedScene" uid="uid://chtm5rrt4ee8i" path="res://scenes/pot.tscn" id="11_mtygl"]
 [ext_resource type="Texture2D" uid="uid://m5rjric0phad" path="res://assets/sprites/droplet.png" id="12_3sb2g"]
-[ext_resource type="Texture2D" uid="uid://c8242ptcdjfqa" path="res://assets/sprites/sheikh a.png" id="13_lftp4"]
-[ext_resource type="Script" path="res://scripts/sheikha.gd" id="14_jhqeu"]
 [ext_resource type="FontFile" uid="uid://ctui8lbqt0mdi" path="res://font.ttf" id="15_wupgs"]
+
+[sub_resource type="GDScript" id="GDScript_701yb"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pv50g"]
 distance = -111.0
@@ -230,7 +229,7 @@ font_size = 8
 font_color = Color(0.212839, 0.439923, 1, 1)
 
 [node name="Game3" type="Node2D"]
-script = ExtResource("1_1cctq")
+script = SubResource("GDScript_701yb")
 
 [node name="Killzone" parent="." instance=ExtResource("1_m67a3")]
 
@@ -348,12 +347,6 @@ position = Vector2(3, -257)
 
 [node name="Pot" parent="Pot3" instance=ExtResource("11_mtygl")]
 position = Vector2(568, -88)
-
-[node name="SheikhA" type="Sprite2D" parent="."]
-position = Vector2(86.0625, -236.89)
-scale = Vector2(0.0574325, 0.0574325)
-texture = ExtResource("13_lftp4")
-script = ExtResource("14_jhqeu")
 
 [node name="Label4" type="Label" parent="."]
 offset_left = -220.0

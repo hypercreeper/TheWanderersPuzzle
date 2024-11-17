@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://f7lgj8fx3wbq"]
+[gd_scene load_steps=23 format=3 uid="uid://f7lgj8fx3wbq"]
 
 [ext_resource type="Script" path="res://scripts/africa.gd" id="1_obonr"]
 [ext_resource type="PackedScene" uid="uid://r8m8x8myq4cf" path="res://scenes/killzone.tscn" id="1_yobu8"]
@@ -12,10 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://ptb23jubexxh" path="res://assets/sprites/coinicon.png" id="9_e27jd"]
 [ext_resource type="FontFile" uid="uid://ctui8lbqt0mdi" path="res://font.ttf" id="9_f6bur"]
 [ext_resource type="Texture2D" uid="uid://m5rjric0phad" path="res://assets/sprites/droplet.png" id="10_8dg52"]
-[ext_resource type="PackedScene" uid="uid://dayjr02m01dcl" path="res://scenes/pot.tscn" id="10_r0i2g"]
-[ext_resource type="Script" path="res://scenes/water_regen_area.gd" id="13_johc0"]
-[ext_resource type="Texture2D" uid="uid://c8242ptcdjfqa" path="res://assets/sprites/sheikh a.png" id="15_srpjx"]
-[ext_resource type="Script" path="res://scripts/sheikha.gd" id="16_56eor"]
+[ext_resource type="PackedScene" uid="uid://chtm5rrt4ee8i" path="res://scenes/pot.tscn" id="10_r0i2g"]
+[ext_resource type="PackedScene" uid="uid://ccof37bnd811a" path="res://scenes/sheikhAbduhandun.tscn" id="14_xl5kl"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pv50g"]
 distance = -111.0
@@ -362,10 +360,6 @@ position = Vector2(3, -257)
 [node name="Pot" parent="Pot" instance=ExtResource("10_r0i2g")]
 position = Vector2(8, -8)
 
-[node name="Game Manager" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("8_o3f3k")
-
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(-347, -14)
 
@@ -428,19 +422,19 @@ theme_override_fonts/font = ExtResource("9_f6bur")
 theme_override_font_sizes/font_size = 16
 text = "Almost There... Stay Hydrated..."
 
-[node name="SheikhA" type="Sprite2D" parent="."]
-position = Vector2(2592, -102)
-scale = Vector2(0.0752253, 0.0752253)
-texture = ExtResource("15_srpjx")
-flip_h = true
-script = ExtResource("16_56eor")
-
 [node name="Area2D2" type="Area2D" parent="."]
 position = Vector2(1694, 34)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D2"]
 position = Vector2(-11, -2)
 polygon = PackedVector2Array(-35, -11, -35, 16, 29, 16, 29, 0, 45, 0, 45, -11)
+
+[node name="Game Manager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("8_o3f3k")
+
+[node name="SheikhA" parent="." instance=ExtResource("14_xl5kl")]
+position = Vector2(2566, -63)
 
 [connection signal="body_entered" from="Pot/Pot" to="Pot/Pot" method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
