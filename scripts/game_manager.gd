@@ -1,7 +1,9 @@
 extends Node
 
 @onready var label: Label = $"../Player/Camera2D/HBoxContainer/Label"
+static var coins = 0
 static var score = 0
+static var in_convo = false
 var last_scene: String = ""
 
 static var water:int =15

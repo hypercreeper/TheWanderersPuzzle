@@ -1,6 +1,6 @@
 extends Area2D
 
-@onready var timer: Timer = $Timer
+@onready var timer: Timer = $"../Timer"
 @onready var game_manager: Node = %"Game Manager"
 @onready var game: Node2D = $".."
 
@@ -16,9 +16,13 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	print(type_string(typeof(body)))
 	if body is not TileMap:
+		timer.stop()
+		timer.start(2)
 		game.regenerating_water = true
 		print(game.regenerating_water)
 func _on_body_exited(body: Node2D) -> void:
 	if body is not TileMap:
+		timer.stop()
+		timer.start(6)
 		game.regenerating_water = false
 		print(game.regenerating_water)
