@@ -13,9 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bswpoyreckh2r" path="res://scenes/sheikh_f.tscn" id="13_ddg3f"]
 [ext_resource type="Texture2D" uid="uid://m5rjric0phad" path="res://assets/sprites/droplet.png" id="13_mi8sy"]
 [ext_resource type="Script" path="res://scripts/water_regen_area.gd" id="13_pg3wh"]
-[ext_resource type="Texture2D" uid="uid://c8242ptcdjfqa" path="res://assets/sprites/sheikh a.png" id="14_bkwts"]
 [ext_resource type="PackedScene" uid="uid://dayjr02m01dcl" path="res://scenes/pot.tscn" id="14_hi6tv"]
-[ext_resource type="Script" path="res://scripts/sheikha.gd" id="15_f1s72"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pv50g"]
 distance = -111.0
