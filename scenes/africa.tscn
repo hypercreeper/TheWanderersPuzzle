@@ -342,9 +342,9 @@ position_smoothing_enabled = true
 
 [node name="ReplenishingLabel" type="Label" parent="Player/Camera2D"]
 offset_left = -39.0
-offset_top = -25.0
+offset_top = -53.425
 offset_right = 108.0
-offset_bottom = -2.0
+offset_bottom = -37.15
 theme_override_colors/font_color = Color(0.212839, 0.439923, 1, 1)
 theme_override_colors/font_shadow_color = Color(0.212839, 0.439923, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
