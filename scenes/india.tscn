@@ -295,6 +295,48 @@ position = Vector2(344, -262)
 [node name="coin13" parent="Coins" instance=ExtResource("5_rskei")]
 position = Vector2(313, -279)
 
+[node name="coin14" parent="Coins" instance=ExtResource("5_rskei")]
+position = Vector2(-548.835, -266.347)
+
+[node name="coin15" parent="Coins" instance=ExtResource("5_rskei")]
+position = Vector2(-549, -251)
+
+[node name="coin16" parent="Coins" instance=ExtResource("5_rskei")]
+position = Vector2(-549, -237)
+
+[node name="coin17" parent="Coins" instance=ExtResource("5_rskei")]
+position = Vector2(-549, -223)
+
+[node name="coin18" parent="Coins" instance=ExtResource("5_rskei")]
+position = Vector2(-549, -209)
+
+[node name="coin19" parent="Coins" instance=ExtResource("5_rskei")]
+position = Vector2(-549, -194)
+
+[node name="coin20" parent="Coins" instance=ExtResource("5_rskei")]
+position = Vector2(-549, -194)
+
+[node name="coin21" parent="Coins" instance=ExtResource("5_rskei")]
+position = Vector2(-549, -180)
+
+[node name="coin22" parent="Coins" instance=ExtResource("5_rskei")]
+position = Vector2(-549, -180)
+
+[node name="coin24" parent="Coins" instance=ExtResource("5_rskei")]
+position = Vector2(-549, -180)
+
+[node name="coin25" parent="Coins" instance=ExtResource("5_rskei")]
+position = Vector2(-549, -180)
+
+[node name="coin26" parent="Coins" instance=ExtResource("5_rskei")]
+position = Vector2(-549, -180)
+
+[node name="coin27" parent="Coins" instance=ExtResource("5_rskei")]
+position = Vector2(-549, -180)
+
+[node name="coin23" parent="Coins" instance=ExtResource("5_rskei")]
+position = Vector2(-549, -160)
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 4.0
 autostart = true
@@ -336,7 +378,7 @@ position = Vector2(3, -257)
 position = Vector2(169, -24)
 
 [node name="Player" parent="." instance=ExtResource("6_tp23j")]
-position = Vector2(-135, 14)
+position = Vector2(-500, -298)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
