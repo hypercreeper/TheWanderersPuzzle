@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b0c8k3vkt3vcx" path="res://scenes/player.tscn" id="6_fajs2"]
 [ext_resource type="Texture2D" uid="uid://ptb23jubexxh" path="res://assets/sprites/coinicon.png" id="7_08cdo"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="8_a74yd"]
-[ext_resource type="PackedScene" uid="uid://dayjr02m01dcl" path="res://scenes/pot.tscn" id="11_mtygl"]
+[ext_resource type="PackedScene" uid="uid://chtm5rrt4ee8i" path="res://scenes/pot.tscn" id="11_mtygl"]
 [ext_resource type="Texture2D" uid="uid://m5rjric0phad" path="res://assets/sprites/droplet.png" id="12_3sb2g"]
 [ext_resource type="PackedScene" uid="uid://cuisthmr36axt" path="res://scenes/sheikh_b.tscn" id="13_1yehl"]
 [ext_resource type="Script" path="res://scripts/water_regen_area.gd" id="13_7wuoa"]
