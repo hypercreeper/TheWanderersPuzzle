@@ -38,20 +38,22 @@ func _on_body_exited(body):
 	player_in_range = false
 	label_2.visible = true
 	hide_dialogue()
-
+var fired = false
 func show_next_dialogue():
 	if current_dialogue_index < dialogue_texts.size():
 		dialogue_label.text = dialogue_texts[current_dialogue_index]
 		dialogue_label.show()
 		current_dialogue_index += 1
 	else:
-		GameManagerss.artifacts += 30
-		game_manager.update_water_label()
-		animation_player.play("fade out")
-		await animation_player.animation_finished
-		get_tree().change_scene_to_file("res://scenes/india.tscn")
-		hide_dialogue()
-		current_dialogue_index = 0
+		if not fired:
+			fired = true
+			GameManagerss.artifacts += 30
+			game_manager.update_water_label()
+			animation_player.play("fade out")
+			await animation_player.animation_finished
+			get_tree().change_scene_to_file("res://scenes/india.tscn")
+			hide_dialogue()
+			current_dialogue_index = 0
 
 func hide_dialogue():
 	dialogue_label.hide()

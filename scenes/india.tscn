@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bkyki2s8wv4b2"]
+[gd_scene load_steps=25 format=3 uid="uid://bkyki2s8wv4b2"]
 
 [ext_resource type="PackedScene" uid="uid://r8m8x8myq4cf" path="res://scenes/killzone.tscn" id="1_3wrq3"]
 [ext_resource type="Script" path="res://scripts/india.gd" id="1_17ygw"]
@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bswpoyreckh2r" path="res://scenes/sheikh_f.tscn" id="13_ddg3f"]
 [ext_resource type="Texture2D" uid="uid://m5rjric0phad" path="res://assets/sprites/droplet.png" id="13_mi8sy"]
 [ext_resource type="Script" path="res://scripts/water_regen_area.gd" id="13_pg3wh"]
-[ext_resource type="PackedScene" uid="uid://chtm5rrt4ee8i" path="res://scenes/pot.tscn" id="14_hi6tv"]
+[ext_resource type="PackedScene" uid="uid://dayjr02m01dcl" path="res://scenes/pot.tscn" id="14_hi6tv"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pv50g"]
 distance = -111.0
@@ -229,6 +229,42 @@ _data = {
 "peniscocksucker": SubResource("Animation_frtfp")
 }
 
+[sub_resource type="Animation" id="Animation_g1ug3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_g7nco"]
+resource_name = "fade out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c37qp"]
+_data = {
+"RESET": SubResource("Animation_g1ug3"),
+"fade out": SubResource("Animation_g7nco")
+}
+
 [node name="Game" type="Node2D"]
 script = ExtResource("1_17ygw")
 
@@ -301,42 +337,6 @@ position = Vector2(-548.835, -266.347)
 [node name="coin15" parent="Coins" instance=ExtResource("5_rskei")]
 position = Vector2(-549, -251)
 
-[node name="coin16" parent="Coins" instance=ExtResource("5_rskei")]
-position = Vector2(-549, -237)
-
-[node name="coin17" parent="Coins" instance=ExtResource("5_rskei")]
-position = Vector2(-549, -223)
-
-[node name="coin18" parent="Coins" instance=ExtResource("5_rskei")]
-position = Vector2(-549, -209)
-
-[node name="coin19" parent="Coins" instance=ExtResource("5_rskei")]
-position = Vector2(-549, -194)
-
-[node name="coin20" parent="Coins" instance=ExtResource("5_rskei")]
-position = Vector2(-549, -194)
-
-[node name="coin21" parent="Coins" instance=ExtResource("5_rskei")]
-position = Vector2(-549, -180)
-
-[node name="coin22" parent="Coins" instance=ExtResource("5_rskei")]
-position = Vector2(-549, -180)
-
-[node name="coin24" parent="Coins" instance=ExtResource("5_rskei")]
-position = Vector2(-549, -180)
-
-[node name="coin25" parent="Coins" instance=ExtResource("5_rskei")]
-position = Vector2(-549, -180)
-
-[node name="coin26" parent="Coins" instance=ExtResource("5_rskei")]
-position = Vector2(-549, -180)
-
-[node name="coin27" parent="Coins" instance=ExtResource("5_rskei")]
-position = Vector2(-549, -180)
-
-[node name="coin23" parent="Coins" instance=ExtResource("5_rskei")]
-position = Vector2(-549, -160)
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 4.0
 autostart = true
@@ -378,7 +378,7 @@ position = Vector2(3, -257)
 position = Vector2(169, -24)
 
 [node name="Player" parent="." instance=ExtResource("6_tp23j")]
-position = Vector2(-500, -298)
+position = Vector2(-126, 14)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
@@ -388,9 +388,9 @@ position_smoothing_enabled = true
 
 [node name="ReplenishingLabel" type="Label" parent="Player/Camera2D"]
 offset_left = -38.65
-offset_top = -53.425
+offset_top = -61.425
 offset_right = 108.35
-offset_bottom = -30.425
+offset_bottom = -38.425
 theme_override_colors/font_color = Color(0.212839, 0.439923, 1, 1)
 theme_override_colors/font_shadow_color = Color(0.212839, 0.439923, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -465,6 +465,11 @@ theme_override_fonts/font = ExtResource("10_xvl2m")
 theme_override_font_sizes/font_size = 8
 text = "Find Fariduddin..."
 autowrap_mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_c37qp")
+}
 
 [connection signal="body_entered" from="Pot/Pot22" to="Pot/Pot22" method="_on_body_entered"]
 [connection signal="body_entered" from="Pot2/Pot" to="Pot2/Pot" method="_on_body_entered"]
