@@ -45,12 +45,12 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("escape"):
-		if game_manager.in_convo:
+		#if game_manager.in_convo:
 			var tree = get_tree()
 			if tree != null:
 				tree.change_scene_to_file("res://scenes/startmain.tscn")
 				print(GameManagerss.score)
 			else:
 				pass
-		else:
-			game_manager.in_convo = false
+		#else:
+			#game_manager.in_convo = false
