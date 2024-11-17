@@ -10,10 +10,14 @@ config_version=5
 
 [application]
 
-config/name="The Hareth"
+config/name="TheWanderersPuzzle"
 run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/show_image=false
+boot_splash/image="res://assets/sprites/favicon.png"
+config/icon="res://favicon.ico"
+config/macos_native_icon="res://assets/sprites/favicon.png"
+config/windows_native_icon="res://favicon.ico"
 
 [autoload]
 
