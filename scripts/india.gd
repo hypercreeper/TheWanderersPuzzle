@@ -10,6 +10,7 @@ func _ready() -> void:
 	GameManagerss.water = 15
 	$Player/Camera2D/HBoxContainer/Label.text = str(GameManagerss.score)
 	timer.timeout.connect(remove_water)
+	GameManagerss.score = 0
 	game_manager.update_water_label()
 
 func remove_water():
