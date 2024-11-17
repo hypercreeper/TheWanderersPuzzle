@@ -27,7 +27,7 @@ func on_start_pressed() -> void:
 	animation_player.play("fade out")
 	await animation_player.animation_finished
 	GameManagerss.last_scene = "MainMenu"
-	get_tree().change_scene_to_packed(startmain)
+	get_tree().change_scene_to_file("res://scenes/africa.tscn")
 
 func on_quit_pressed() -> void:
 	quit_button.disabled=true

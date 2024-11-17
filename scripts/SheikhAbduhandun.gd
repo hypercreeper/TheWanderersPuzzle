@@ -25,12 +25,13 @@ func _process(_delta):
 			dialogue_label.show()
 
 func _on_body_entered(body):
-	player_in_range = true
-	if GameManagerss.score >= 7:
-		label_2.text = "Press Enter to talk"
-	else:
-		label_2.text = "Collect all coins first!"
-	label_2.visible = true
+	if body is not TileMap:
+		player_in_range = true
+		if GameManagerss.score >= 7:
+			label_2.text = "Press Enter to talk"
+		else:
+			label_2.text = "Collect all coins first!"
+		label_2.visible = true
 
 func _on_body_exited(body):
 	player_in_range = false

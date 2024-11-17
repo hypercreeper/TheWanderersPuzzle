@@ -331,8 +331,7 @@ position = Vector2(120, -25)
 position = Vector2(217, -41)
 
 [node name="coin5" parent="Coins" instance=ExtResource("5_d13rt")]
-visible = false
-position = Vector2(200, -41)
+position = Vector2(779, -71)
 
 [node name="coin6" parent="Coins" instance=ExtResource("5_d13rt")]
 position = Vector2(-244, -7)
