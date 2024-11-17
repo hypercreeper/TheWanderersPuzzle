@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://f7lgj8fx3wbq"]
+[gd_scene load_steps=27 format=3 uid="uid://f7lgj8fx3wbq"]
 
 [ext_resource type="Script" path="res://scripts/africa.gd" id="1_obonr"]
 [ext_resource type="PackedScene" uid="uid://r8m8x8myq4cf" path="res://scenes/killzone.tscn" id="1_yobu8"]
@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://ptb23jubexxh" path="res://assets/sprites/coinicon.png" id="9_e27jd"]
 [ext_resource type="FontFile" uid="uid://ctui8lbqt0mdi" path="res://font.ttf" id="9_f6bur"]
 [ext_resource type="Texture2D" uid="uid://m5rjric0phad" path="res://assets/sprites/droplet.png" id="10_8dg52"]
-[ext_resource type="PackedScene" uid="uid://chtm5rrt4ee8i" path="res://scenes/pot.tscn" id="10_r0i2g"]
+[ext_resource type="PackedScene" uid="uid://dayjr02m01dcl" path="res://scenes/pot.tscn" id="10_r0i2g"]
 [ext_resource type="Script" path="res://scripts/water_regen_area.gd" id="13_f7tpy"]
 [ext_resource type="PackedScene" uid="uid://ccof37bnd811a" path="res://scenes/sheikhAbduhandun.tscn" id="14_xl5kl"]
 
@@ -244,6 +244,42 @@ font_color = Color(0.212839, 0.439923, 1, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0ng8"]
 size = Vector2(20, 394)
 
+[sub_resource type="Animation" id="Animation_g1ug3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_g7nco"]
+resource_name = "fade out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c37qp"]
+_data = {
+"RESET": SubResource("Animation_g1ug3"),
+"fade out": SubResource("Animation_g7nco")
+}
+
 [node name="Game2" type="Node2D"]
 script = ExtResource("1_obonr")
 
@@ -438,6 +474,11 @@ script = ExtResource("8_o3f3k")
 
 [node name="SheikhA" parent="." instance=ExtResource("14_xl5kl")]
 position = Vector2(2566, -63)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_c37qp")
+}
 
 [connection signal="body_entered" from="Pot/Pot" to="Pot/Pot" method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
