@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bkyki2s8wv4b2"]
+[gd_scene load_steps=23 format=3 uid="uid://bkyki2s8wv4b2"]
 
 [ext_resource type="PackedScene" uid="uid://r8m8x8myq4cf" path="res://scenes/killzone.tscn" id="1_3wrq3"]
 [ext_resource type="Script" path="res://scripts/india.gd" id="1_17ygw"]
@@ -10,6 +10,7 @@
 [ext_resource type="FontFile" uid="uid://dlk0p5n2mdgm4" path="res://assets/fonts/PixelOperator8.ttf" id="7_or6cf"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="8_d78wt"]
 [ext_resource type="Texture2D" uid="uid://ptb23jubexxh" path="res://assets/sprites/coinicon.png" id="8_haicm"]
+[ext_resource type="FontFile" uid="uid://ctui8lbqt0mdi" path="res://font.ttf" id="10_xvl2m"]
 [ext_resource type="PackedScene" uid="uid://bswpoyreckh2r" path="res://scenes/sheikh_f.tscn" id="13_ddg3f"]
 [ext_resource type="Texture2D" uid="uid://m5rjric0phad" path="res://assets/sprites/droplet.png" id="13_mi8sy"]
 [ext_resource type="Script" path="res://scripts/water_regen_area.gd" id="13_pg3wh"]
@@ -228,6 +229,11 @@ _data = {
 "peniscocksucker": SubResource("Animation_frtfp")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_mkw4s"]
+font = ExtResource("10_xvl2m")
+font_size = 8
+font_color = Color(0.212839, 0.439923, 1, 1)
+
 [node name="Game" type="Node2D"]
 script = ExtResource("1_17ygw")
 
@@ -294,6 +300,15 @@ zoom = Vector2(4, 4)
 limit_bottom = 120
 limit_smoothed = true
 position_smoothing_enabled = true
+
+[node name="ReplenishingLabel" type="Label" parent="Player/Camera2D"]
+offset_left = -40.0
+offset_top = -27.0
+offset_right = 53.0
+offset_bottom = -18.0
+theme_override_fonts/font = ExtResource("7_or6cf")
+text = "Replenishing..."
+label_settings = SubResource("LabelSettings_mkw4s")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Player/Camera2D"]
 offset_left = -136.0

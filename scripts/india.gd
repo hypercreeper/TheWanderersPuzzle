@@ -12,7 +12,11 @@ func _ready() -> void:
 	timer.timeout.connect(remove_water)
 	GameManagerss.score = 0
 	game_manager.update_water_label()
-
+func _process(delta: float) -> void:
+	if regenerating_water:
+		replenishing_label.show()
+	else:
+		replenishing_label.hide()
 func remove_water():
 	print(GameManagerss.water)
 	print(regenerating_water)

@@ -17,10 +17,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	print("asd")
 	if regenerating_water:
 		replenishing_label.show()
 	else:
 		replenishing_label.hide()
+
 func remove_water():
 	print(GameManagerss.water)
 	print(regenerating_water)
