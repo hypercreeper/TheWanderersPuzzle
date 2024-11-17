@@ -13,20 +13,22 @@ func _ready():
 	detection_area.body_exited.connect(_on_body_exited)
 	label_2.visible = true
 	hide_dialogue()
-func initDialog():
-	if GameManagerss.score >= 7:
-		show_next_dialogue()
-		label_2.visible=false
-	else:
-		dialogue_label.text = "Collect all coins first!"
-		dialogue_label.show()
 
 func _process(_delta):
 	if player_in_range and Input.is_action_just_pressed("ui_accept"):
-		initDialog()
+		if GameManagerss.score >= 2:
+			show_next_dialogue()
+			label_2.visible=false
+		else:
+			dialogue_label.text = "Collect all coins first!"
+			dialogue_label.show()
 
 func _on_body_entered(body):
-	initDialog()
+	player_in_range = true
+	if GameManagerss.score >= 2:
+		label_2.text = "Press Enter to talk"
+	else:
+		label_2.text = "Collect all coins first!"
 	label_2.visible = true
 
 func _on_body_exited(body):
