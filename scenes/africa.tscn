@@ -374,6 +374,7 @@ autostart = true
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-51, 33)
+script = ExtResource("13_f7tpy")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 position = Vector2(-11, -2)
