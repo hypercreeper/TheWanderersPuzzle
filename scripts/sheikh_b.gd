@@ -2,7 +2,7 @@ extends Node2D
 
 # Variables
 var player_in_range = false
-var dialogue_texts = ["Ibn Batuta...","It seems to me that you are fond of foreign travel","You must visit my brother Fariduddin in India","and Burhudin in Arabia","Convey my greetings to them..."]
+var dialogue_texts = ["Thank you for finding me","Ibn Batuta...","I hope my brother is well","For your efforts you will receive 30 Artifacts"]
 var current_dialogue_index = 0
 @onready var dialogue_label: Label = $Control/Label
 @onready var detection_area: Area2D = $DetectionArea

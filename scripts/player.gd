@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var game_manager: Node = %"Game Manager"
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
-const SPEED = 400
+const SPEED = 100
 const JUMP_VELOCITY = -300.0
 
 func _physics_process(delta: float) -> void:
