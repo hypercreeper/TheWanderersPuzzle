@@ -23,6 +23,8 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_body_exited(body: Node2D) -> void:
 	if body is not TileMap:
 		timer.stop()
-		timer.start(6)
+		if GameManagerss.last_scene == "africa":
+			timer.start(6)
+		
 		game.regenerating_water = false
 		print(game.regenerating_water)
